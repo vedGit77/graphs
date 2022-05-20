@@ -3,7 +3,7 @@ using namespace std;
 
 class Graph {
   private:
-  bool** adjMatrix;
+  bool** adjMatrix; //** means that adjMatrix is a 2D boolean array
   int numVertices;
 
    public:
