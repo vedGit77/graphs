@@ -1,3 +1,7 @@
+// Time Complexity: O(V+E), where V is the number of nodes and E is the number of edges.
+// Auxiliary Space: O(V)
+
+
 #include<bits/stdc++.h> 
 using namespace std; 
 
