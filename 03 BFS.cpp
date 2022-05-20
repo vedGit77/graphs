@@ -1,6 +1,13 @@
 // Time Complexity: O(V+E), where V is the number of nodes and E is the number of edges.
 // Auxiliary Space: O(V)...for the queue
 
+// Applications:
+// Shortest Path 
+// Minimum Spanning Tree for unweighted graph (Prims Algo)
+// Cycle detection in undirected graph
+// Ford–Fulkerson algorithm 
+
+
 
 #include<bits/stdc++.h> 
 using namespace std; 
