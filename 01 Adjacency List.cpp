@@ -14,10 +14,16 @@ void printGraph(vector<int> adj[], int V)
         for (int x : adj[i]) 
            cout << x <<" "; 
         cout<<"\n"; 
+      
+//  alternatively, we can do the below apporach
+      
+//         vector<int>::iterator itr;
+//         for(itr = adj[i].begin();itr!=adj[i].end();itr++)
+//             cout<<*itr<<" ";
+//         cout<<endl;
     } 
 } 
   
-// Driver code 
 int main() 
 { 
     int V = 4; 
