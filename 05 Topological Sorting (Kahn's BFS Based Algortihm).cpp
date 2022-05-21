@@ -1,3 +1,8 @@
+//VVIMP NOTE: it works only FOR ACYCLIC GRAPHS!
+
+//then how did we use it for cycle detection in directed graph??....we modified it using count variavle!
+
+
 #include<bits/stdc++.h> 
 using namespace std; 
 
