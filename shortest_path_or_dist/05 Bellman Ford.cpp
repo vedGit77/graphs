@@ -3,7 +3,8 @@
 // time complexity of Bellman-Ford is O(VE), which is more than Dijkstra. Only advantage over Dijkstra is the ability to handle -ive weights.
 
 
-//SUPER IMP: it works for -ive weights, BUT NOT for -ive weight CYCLES
+//SUPER IMP: 1. it works for -ive weights, BUT NOT for -ive weight CYCLES
+//           2. Bellman-Ford does NOT work with UNdirected graph with negative edges as it will declared as negative cycle.
 
 
 // Algorithm 
