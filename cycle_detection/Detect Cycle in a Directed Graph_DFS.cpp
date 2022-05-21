@@ -6,13 +6,14 @@ bool DFSRec(vector<int> adj[], int s,bool visited[], bool recSt[])
     visited[s]=true;
     recSt[s]=true;
     
-    for(int u:adj[s]){
-        if(visited[u]==false && DFSRec(adj,u,visited,recSt)==true)
+    for(int u:adj[s])
+    {
+        if(visited[u]==false && DFSRec(adj,u,visited,recSt)==true)//if the immidiate adjacent is not yet visited, but uske adjacent (ka adjacent...so on) is visited
                 {return true;}
-        else if(recSt[u]==true)
+        else if(recSt[u]==true) //if already one of the immidiate adjacent is in the recursion call stack, then theres a cycle
             {return true;}
     }
-    recSt[s]=false;
+    recSt[s]=false; //once all the descendants are visited, remove it from the call stack
     return false;
 }
 
@@ -20,7 +21,8 @@ bool DFS(vector<int> adj[], int V){
     bool visited[V]; 
 	for(int i=0;i<V; i++) 
 		visited[i] = false;
-	bool recSt[V]; 
+	
+	bool recSt[V]; //array to store if a particular vertex is in the recursion call stack 
 	for(int i=0;i<V; i++) 
 		recSt[i] = false;
 		
