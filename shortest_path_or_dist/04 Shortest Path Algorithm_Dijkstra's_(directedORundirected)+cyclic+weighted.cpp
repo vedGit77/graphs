@@ -16,10 +16,10 @@ vector<int> djikstra(int graph[V][V],int src)
 		for(int i=0;i<V;i++)
 		    if(!fin[i]&&(u==-1||dist[i]<dist[u]))
 		        u=i;
+		
 		fin[u] = true; 
 		
 		for (int v = 0; v < V; v++) 
-
 			if (graph[u][v]!=0 && fin[v] == false) 
 				dist[v] = min(dist[v],dist[u]+graph[u][v]); 
 	} 
@@ -29,9 +29,9 @@ vector<int> djikstra(int graph[V][V],int src)
 int main() 
 { 
 	int graph[V][V] = { { 0, 50, 100, 0}, 
-						{ 50, 0, 30, 200 }, 
-						{ 100, 30, 0, 20 }, 
-						{ 0, 200, 20, 0 },}; 
+			    { 50, 0, 30, 200 }, 
+     			    { 100, 30, 0, 20 }, 
+			    { 0, 200, 20, 0 },}; 
 
 	for(int x: djikstra(graph,0)){
 	    cout<<x<<" ";
