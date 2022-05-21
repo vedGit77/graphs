@@ -1,3 +1,6 @@
+//no need to check for parent like in undirected graph
+//because its a directed graph here....so connection is only 1 way...not 2 way
+
 #include<bits/stdc++.h> 
 using namespace std; 
 
