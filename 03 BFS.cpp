@@ -1,5 +1,5 @@
 // Time Complexity: O(V+E), where V is the number of nodes and E is the number of edges.
-// Auxiliary Space: O(V)...for the queue
+// Auxiliary Space: O(V)...for the queue and visited array
 
 // Applications:
 // Shortest Path 
