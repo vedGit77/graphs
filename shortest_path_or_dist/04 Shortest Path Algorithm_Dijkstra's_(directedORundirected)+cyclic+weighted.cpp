@@ -2,7 +2,7 @@
 
 //very similar to prims, but there we had to find minimum spanning tree
 
-// Its NOT the same ques as 02 (since it was for DAG)
+// Its NOT the same file as 02 (since it was for DAG)
 
 // Algorithm:
 // 1) Create a set sptSet (shortest path tree set) that keeps track of vertices included in the shortest-path tree, i.e., 
