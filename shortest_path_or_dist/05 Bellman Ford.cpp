@@ -1,3 +1,7 @@
+// works for: ((directed OR undirected) && cyclic graphs  &&  weighted  &&  -ive path distances)
+
+// time complexity of Bellman-Ford is O(VE), which is more than Dijkstra. Only advantage over Dijkstra is the ability to handle -ive weights.
+
 #include <bits/stdc++.h> 
 
 struct Edge { 
