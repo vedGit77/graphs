@@ -40,7 +40,6 @@ int primMST(int graph[V][V])
 
 		
 		for (int v = 0; v < V; v++) 
-
 			if (graph[u][v]!=0 && mSet[v] == false) 
 				key[v] = min(key[v],graph[u][v]); 
 	} 
@@ -50,9 +49,9 @@ int primMST(int graph[V][V])
 int main() 
 { 
 	int graph[V][V] = { { 0, 5, 8, 0}, 
-						{ 5, 0, 10, 15 }, 
-						{ 8, 10, 0, 20 }, 
-						{ 0, 15, 20, 0 },}; 
+			    { 5, 0, 10, 15 }, 
+			    { 8, 10, 0, 20 }, 
+			    { 0, 15, 20, 0 },}; 
 
 	cout<<primMST(graph); 
 
