@@ -17,8 +17,10 @@ void BFS(vector<int> adj[], int V, int s,int dist[])
 		int u = q.front(); 
 		q.pop();
 		 
-		for(int v:adj[u]){
-		    if(visited[v]==false){
+		for(int v:adj[u])
+		{
+		    if(visited[v]==false)
+		    {
 		        dist[v]=dist[u]+1;
 		        visited[v]=true;
 		        q.push(v);
@@ -41,10 +43,13 @@ int main()
 	addEdge(adj,2,3); 
 	addEdge(adj,0,2); 
 	addEdge(adj,1,3);
-    int dist[V];
-    for(int i=0;i<V;i++){
-        dist[i]=INT_MAX;
-    }
+    
+	int dist[V];
+    
+	for(int i=0;i<V;i++)
+	{
+         	dist[i]=INT_MAX;
+	}
 	dist[0]=0;
 	BFS(adj,V,0,dist); 
     
