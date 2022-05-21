@@ -1,6 +1,7 @@
 //DAG- directed acyclic graph
 //graph is weightes
 //aim is to print shortest dist from source vertex to every other vertex
+//Overall time complexity of this algorithm is O(V+E).
 
 //Following is complete algorithm for finding shortest distances. 
 // 1) Initialize dist[] = {INF, INF, ….} and dist[s] = 0 where s is the source vertex. 
