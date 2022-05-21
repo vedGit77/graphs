@@ -8,9 +8,9 @@ bool DFSRec(vector<int> adj[], int s,bool visited[], bool recSt[])
     
     for(int u:adj[s])
     {
-        if(visited[u]==false && DFSRec(adj,u,visited,recSt)==true)//if the immidiate adjacent is not yet visited, but uske adjacent (ka adjacent...so on) is visited
+        if(visited[u]==false && DFSRec(adj,u,visited,recSt)==true)//check for immidiate NON visited descendant
                 {return true;}
-        else if(recSt[u]==true) //if already one of the immidiate adjacent is in the recursion call stack, then theres a cycle
+        else if(recSt[u]==true) //if already one of the descendants is in the recursion call stack, it means a back edge, means theres a cycle
             {return true;}
     }
     recSt[s]=false; //once all the descendants are visited, remove it from the call stack
