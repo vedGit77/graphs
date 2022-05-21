@@ -7,7 +7,9 @@ Prims for MST          n                y                  y                 y  
 
 Dijkstra's             y                y                  y                 y                     n
 
-Bellman Ford           y                y                  y                 y                     y
+Bellman Ford           y                y                  y                 y                     y     NOTE: Bellman-Ford does NOT work with UNdirected 
+                                                                                                               graph with negative edges as it will declared 
+                                                                                                               as negative cycle.
 
 KosaRaju               y                n                  y                 n                     n        
                                  (instead use BFS/DFS 
