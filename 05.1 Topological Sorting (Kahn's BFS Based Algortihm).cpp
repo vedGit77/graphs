@@ -2,6 +2,8 @@
 
 //then how did we use it for cycle detection in directed graph??....we modified it using count variavle!
 
+// The time complexity of topological sort using Kahn’s algorithm is O(V+E), where V = Vertices, E = Edges.
+// Space complexity = O(V)
 
 #include<bits/stdc++.h> 
 using namespace std; 
