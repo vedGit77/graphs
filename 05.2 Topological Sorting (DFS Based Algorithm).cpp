@@ -41,9 +41,9 @@ void addEdge(vector<int> adj[], int u, int v){
 
 int main() 
 { 
-	int V=5;
-	vector<int> adj[V];
-	addEdge(adj,0, 1); 
+    int V=5;
+    vector<int> adj[V];
+    addEdge(adj,0, 1); 
     addEdge(adj,1, 3); 
     addEdge(adj,2, 3); 
     addEdge(adj,3, 4); 
