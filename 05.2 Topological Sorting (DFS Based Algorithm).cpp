@@ -1,11 +1,12 @@
 #include<bits/stdc++.h> 
 using namespace std; 
 
-void DFS(vector<int> adj[], int u,stack<int> &st, bool visited[]) 
+void DFS(vector<int> adj[], int u,stack<int> &st, bool visited[]) //normal dfs, just st.push(u) is extra
 { 	
     visited[u]=true;
     
-    for(int v:adj[u]){
+    for(int v:adj[u])
+    {
         if(visited[v]==false)
             DFS(adj,v,st,visited);
     }
@@ -16,17 +17,17 @@ void DFS(vector<int> adj[], int u,stack<int> &st, bool visited[])
 void topologicalSort(vector<int> adj[], int V) 
 { 
     bool visited[V]; 
-	for(int i = 0;i<V; i++) 
-		visited[i] = false;
-	stack<int> st;
+    for(int i = 0;i<V; i++) 
+	visited[i] = false;
+    stack<int> st;  //will contain vertices in topologically sorted manner
     
-    for(int u=0;u<V;u++){
-        if(visited[u]==false){
+    for(int u=0;u<V;u++)  //loop to consider disconnected graphs as well
+    {
+        if(visited[u]==false)
             DFS(adj,u,st,visited);
-        }
     }
     
-    while(st.empty()==false){
+    while(st.empty()==false){  //print the ans
         int u=st.top();
         st.pop();
         cout<<u<<" ";
