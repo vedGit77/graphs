@@ -24,9 +24,11 @@ using namespace std;
 int primMST(int graph[V][V]) 
 { 
 
-	int key[V];int res=0; 
+	int res=0; 
+	bool mSet[V]; 
+	int key[V];
 	fill(key,key+V,INT_MAX);
-	bool mSet[V]; key[0]=0;
+	key[0]=0;
 
 	for (int count = 0; count < V ; count++) 
 	{ 
