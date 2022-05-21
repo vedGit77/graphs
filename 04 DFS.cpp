@@ -16,7 +16,8 @@ void DFSRec(vector<int> adj[], int s, bool visited[])
 { 	
     visited[s]=true;
     
-    for(int u:adj[s]){
+    for(int u:adj[s])
+    {
         if(visited[u]==false)
             DFSRec(adj,u,visited);
     }
@@ -25,12 +26,15 @@ void DFSRec(vector<int> adj[], int s, bool visited[])
 int DFS(vector<int> adj[], int V){
     int count=0;
     bool visited[V]; 
-	for(int i = 0;i<V; i++) 
-		visited[i] = false;
+	
+    for(int i = 0;i<V; i++) 
+	visited[i] = false;
 		
-    for(int i=0;i<V;i++){
+    for(int i=0;i<V;i++)  //to consider disconnected graphs also, we run this loop
+    {
         if(visited[i]==false)
-            {DFSRec(adj,i,visited);count++;}
+            {DFSRec(adj,i,visited);
+	     count++;} //for counting no. of islands
     }
     return count;
 }
