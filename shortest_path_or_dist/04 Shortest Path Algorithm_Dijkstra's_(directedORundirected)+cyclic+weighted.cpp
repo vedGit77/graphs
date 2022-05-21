@@ -6,6 +6,8 @@
 
 // Its NOT the same file as 02 (since it was for DAG)
 
+//  The time complexity for the matrix representation is O(V^2). In this post, O(ELogV) algorithm for adjacency list
+
 // Algorithm:
 // 1) Create a set sptSet (shortest path tree set) that keeps track of vertices included in the shortest-path tree, i.e., 
 //    whose minimum distance from the source is calculated and finalized. Initially, this set is empty. 
