@@ -6,3 +6,10 @@ Prims for MST          n                y                  y                 y  
 (Min spanning tree)
 
 Dijkstra's             y                y                  y                 y                     n
+
+KosaRaju               y                n                  y                 n                     n        
+                                 (instead use BFS/DFS 
+                                  to get strongly 
+                                  connected component of
+                                  undirected graph)
+                             
