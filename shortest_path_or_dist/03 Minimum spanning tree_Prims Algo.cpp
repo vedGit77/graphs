@@ -36,12 +36,12 @@ int primMST(int graph[V][V])
 
 		for(int i=0;i<V;i++)  
 		    if(!mstSet[i] && (u==-1||key[i]<key[u])) 
-		        u=i;   //Pick a vertex u which is NOT there in mstSet and has MINIMUM key value. 
+		        u=i;   //step 3a.//Pick a vertex u which is NOT there in mstSet and has MINIMUM key value. 
 		
-		mstSet[u] = true; 
+		mstSet[u] = true; //step3b.//Include u to mstSet. 
 		res+=key[u];
 
-		for (int v = 0; v < V; v++) 
+		for (int v = 0; v < V; v++) //step 3c.//Update key value of all adjacent vertices of u.
 			if (graph[u][v]!=0 && mstSet[v] == false) 
 				key[v] = min(key[v],graph[u][v]); 
 	} 
