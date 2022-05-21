@@ -34,9 +34,9 @@ int primMST(int graph[V][V])
 	{ 
 		int u = -1; 
 
-		for(int i=0;i<V;i++)
-		    if(!mstSet[i] && (u==-1||key[i]<key[u]))
-		        u=i;
+		for(int i=0;i<V;i++)  
+		    if(!mstSet[i] && (u==-1||key[i]<key[u])) 
+		        u=i;   //Pick a vertex u which is NOT there in mstSet and has MINIMUM key value. 
 		
 		mstSet[u] = true; 
 		res+=key[u];
