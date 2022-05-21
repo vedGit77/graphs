@@ -13,25 +13,25 @@
 using namespace std; 
 
 void BFS(vector<int> adj[], int s, bool visited[]) 
-{ 	
-  queue<int>  q;  //BFS uses queue
+{
+	queue<int>  q;  //BFS uses queue
 	
 	visited[s] = true; 
 	q.push(s); 
 
 	while(q.empty()==false) 
 	{ 
-      int u = q.front(); 
-      q.pop();
+		int u = q.front(); 
+		q.pop();
 
-      for(int v:adj[u])
-      {
-          if(visited[v]==false)
-          {
-              visited[v]=true;
-              q.push(v);
-          }
-      } 
+		for(int v:adj[u])
+		{
+			 if(visited[v]==false)
+			 {
+			      visited[v]=true;
+			      q.push(v);
+			 }
+		} 
 	 } 
 }
 
@@ -40,8 +40,8 @@ int BFSDin(vector<int> adj[], int V)
     bool visited[V]; 
     int count=0;
   
-	  for(int i = 0;i<V; i++) 
-		    visited[i] = false;
+    for(int i = 0;i<V; i++) 
+	    visited[i] = false;
 		
     for(int i=0;i<V;i++)  //we are calling BFS for all V vertices, to consider the disconnected graphs too!
     {
