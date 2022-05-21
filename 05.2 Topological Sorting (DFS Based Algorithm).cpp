@@ -9,7 +9,7 @@ void DFS(vector<int> adj[], int u,stack<int> &st, bool visited[])
         if(visited[v]==false)
             DFS(adj,v,st,visited);
     }
-    st.push(u);
+    st.push(u); //a vertex goes into the stack only when its dependents are pushed
 }
 
 
