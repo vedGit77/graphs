@@ -33,7 +33,7 @@ void topologicalSort(vector<int> adj[], int V)
 	}
         count++;  //counting the number of vertices popped 
     } 
-    if (count != V) {//whenever theres a cycle, surely count<V, because there will certainly be a set of nodes whose indegree will never become zero
+    if (count != V) {//whenever theres a cycle, surely (count < V), because the vertices of the cycle will always have (indegree > 0)
         cout << "There exists a cycle in the graph\n"; 
     }
     else{
