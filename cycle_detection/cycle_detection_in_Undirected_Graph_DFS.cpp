@@ -9,10 +9,10 @@ bool DFSRec(vector<int> adj[], int s,bool visited[], int parent)
     {
         if(visited[u]==false)
 	{
-            if(DFSRec(adj,u,visited,s)==true)
+            if(DFSRec(adj,u,visited,s)==true) //if nearest adjacent NOT visited, but its adjacent ka adjacent(ka adjacent..so on) is already visited, then true
                 return true;
 	}
-        else if(u!=parent)
+        else if(u!=parent) //means already visited and NOT parent, then true!
     	{
 		return true;
 	}
@@ -25,7 +25,7 @@ bool DFS(vector<int> adj[], int V){
 	for(int i=0;i<V; i++) 
 		visited[i] = false;
 		
-    for(int i=0;i<V;i++){
+    for(int i=0;i<V;i++){  //for disconnected graphs
         if(visited[i]==false)
             if(DFSRec(adj,i,visited,-1)==true)
                 return true;
