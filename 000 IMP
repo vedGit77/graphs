@@ -4,3 +4,5 @@ Topological/Khans      y                n                  n                 y  
 
 Prims for MST          n                y                  y                 y                     y  
 (Min spanning tree)
+
+Dijkstra's             y                y                  y                 y                     n
