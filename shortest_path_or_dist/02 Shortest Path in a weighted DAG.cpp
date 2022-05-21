@@ -1,6 +1,6 @@
 //DAG- directed acyclic graph
 //graph is weightes
-//print shortest dist from source vertex to every other vertex
+//aim is to print shortest dist from source vertex to every other vertex
 
 #include <bits/stdc++.h> 
 #define INF INT_MAX 
@@ -43,9 +43,8 @@ void Graph::addEdge(int u, int v, int weight)
 	adj[u].push_back(node);  
 } 
 
-void Graph::topologicalSortUtil(int v, bool visited[], stack<int> &Stack) 
+void Graph::topologicalSortUtil(int v, bool visited[], stack<int> &Stack) //topological sort using DFS approach
 { 
-	
 	visited[v] = true; 
 
 	list<AdjListNode>::iterator i; 
@@ -61,20 +60,20 @@ void Graph::topologicalSortUtil(int v, bool visited[], stack<int> &Stack)
 
 void Graph::shortestPath(int s) 
 { 
-	stack<int> Stack; 
+	stack<int> Stack; //stack for topological sort
 	int dist[V]; 
 
-	bool *visited = new bool[V]; 
+	bool *visited = new bool[V]; //visited is a boolean array of size V
 	for (int i = 0; i < V; i++) 
 		visited[i] = false; 
  
-	for (int i = 0; i < V; i++) 
+	for (int i = 0; i < V; i++) //loop to consider full graph for topological sort
 		if (visited[i] == false) 
-			topologicalSortUtil(i, visited, Stack); 
+			topologicalSortUtil(i, visited, Stack); //store the topological sort in the stack
 
 	for (int i = 0; i < V; i++) 
-		dist[i] = INF; 
-	dist[s] = 0; 
+		dist[i] = INF; //initial dist =  infinity / INT_MAX
+	dist[s] = 0; //for the source element...distance from itself
 
 	while (Stack.empty() == false) 
 	{  
@@ -84,9 +83,9 @@ void Graph::shortestPath(int s)
 		list<AdjListNode>::iterator i; 
 		if (dist[u] != INF) 
 		{ 
-		for (i = adj[u].begin(); i != adj[u].end(); ++i) 
-			if (dist[i->getV()] > dist[u] + i->getWeight()) 
-				dist[i->getV()] = dist[u] + i->getWeight(); 
+			for (i = adj[u].begin(); i != adj[u].end(); ++i) 
+				if ( dist[i->getV()] > dist[u] + i->getWeight() ) //relax function
+					dist[i->getV()] = dist[u] + i->getWeight(); 
 		} 
 	} 
 
