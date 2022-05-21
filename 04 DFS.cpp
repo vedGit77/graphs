@@ -2,6 +2,11 @@
 // Space Complexity: O(V), since an extra visited array of size V is required.
 
 // Applications:
+// Detecting cycle in a graph/ back edges
+// find a path between two given vertices u and z
+//  Topological Sorting
+//  Finding Strongly Connected Components of a graph
+//  Solving puzzles with only one solution, such as mazes
 
 
 #include<bits/stdc++.h> 
