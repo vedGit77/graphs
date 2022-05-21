@@ -1,5 +1,6 @@
 //DAG- directed acyclic graph
-
+//graph is weightes
+//print shortest dist from source vertex to every other vertex
 
 #include <bits/stdc++.h> 
 #define INF INT_MAX 
