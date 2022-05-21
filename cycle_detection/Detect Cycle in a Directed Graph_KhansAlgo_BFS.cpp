@@ -1,3 +1,8 @@
+//VVIMP NOTE: it works only FOR ACYCLIC GRAPHS!
+
+//then how did we use it for cycle detection in directed graph??....we modified it using count variavle!
+
+
 #include<bits/stdc++.h> 
 using namespace std; 
 
@@ -28,7 +33,7 @@ void topologicalSort(vector<int> adj[], int V)
 	}
         count++;  //counting the number of vertices popped 
     } 
-    if (count != V) { 
+    if (count != V) {//whenever theres a cycle, surely count<V, because there will certainly be a set of nodes whose indegree will never become zero
         cout << "There exists a cycle in the graph\n"; 
     }
     else{
