@@ -15,15 +15,18 @@ void topologicalSort(vector<int> adj[], int V)
         if (in_degree[i] == 0) 
             q.push(i); 
 
-    int count=0;  
+    int count=0;  //exact same as topological/khans algo...just this count variable is extra
     while (!q.empty()) { 
         int u = q.front(); 
         q.pop(); 
   
         for (int x: adj[u]) 
-            if (--in_degree[x] == 0) 
-                q.push(x); 
-        count++;
+	{
+		in_degree[x]--;
+		if (in_degree[x] == 0) 
+                    q.push(x); 
+	}
+        count++;  //counting the number of vertices popped 
     } 
     if (count != V) { 
         cout << "There exists a cycle in the graph\n"; 
@@ -39,9 +42,9 @@ void addEdge(vector<int> adj[], int u, int v){
 
 int main() 
 { 
-	int V=5;
-	vector<int> adj[V];
-	addEdge(adj,0, 1); 
+    int V=5;
+    vector<int> adj[V];
+    addEdge(adj,0, 1); 
     addEdge(adj,4, 1); 
     addEdge(adj,1, 2); 
     addEdge(adj,2, 3); 
