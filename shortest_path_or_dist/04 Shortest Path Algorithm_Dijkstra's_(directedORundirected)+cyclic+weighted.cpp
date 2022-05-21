@@ -1,3 +1,5 @@
+// Dijkstra's DOES NOT WORK for -ive path weights.
+
 // Given a graph and a source vertex in the graph, find the shortest paths from the source to all vertices in the given graph.
 
 //very similar to prims, but there we had to find minimum spanning tree
