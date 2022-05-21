@@ -10,7 +10,7 @@ bool DFSRec(vector<int> adj[], int s,bool visited[], bool recSt[])
     {
         if(visited[u]==false && DFSRec(adj,u,visited,recSt)==true)//check for immidiate NON visited descendant
                 {return true;}
-        else if(recSt[u]==true) //if already one of the descendants is in the recursion call stack, it means a back edge, means theres a cycle
+        else if(recSt[u]==true) //if already one of the descendants is in the recursion call stack, it means a back edge from descendant to ancestor, means theres a cycle
             {return true;}
     }
     recSt[s]=false; //once all the descendants are visited, remove it from the call stack
