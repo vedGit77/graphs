@@ -50,7 +50,7 @@ int main()
 	{
          	dist[i]=INT_MAX;
 	}
-	dist[0]=0;
+	dist[0]=0; //remember to initialize
 	BFS(adj,V,0,dist); 
     
     for(int i=0;i<V;i++){
