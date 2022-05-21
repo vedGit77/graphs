@@ -1,5 +1,6 @@
 // Given a graph and a source vertex in the graph, find the shortest paths from the source to all vertices in the given graph.
 
+//very similar to prims, but there we hav to find minimum spanning tree
 
 // Algorithm:
 // 1) Create a set sptSet (shortest path tree set) that keeps track of vertices included in the shortest-path tree, i.e., 
