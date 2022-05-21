@@ -21,7 +21,7 @@ void BFS(vector<int> adj[], int V, int s,int dist[])
 		{
 		    if(visited[v]==false)
 		    {
-		        dist[v]=dist[u]+1;
+		        dist[v]=dist[u]+1; //main modification from the BFS code is the dist array
 		        visited[v]=true;
 		        q.push(v);
 		    }
