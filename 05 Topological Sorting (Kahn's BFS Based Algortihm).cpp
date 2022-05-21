@@ -24,8 +24,11 @@ void topologicalSort(vector<int> adj[], int V)
         cout<<u<<" "; 
   
         for (int x: adj[u]) 
-            if (--in_degree[x] == 0) 
+        {
+            in_degree[x]--;
+            if (in_degree[x] == 0) 
                 q.push(x); 
+        }
     } 
 }
 
