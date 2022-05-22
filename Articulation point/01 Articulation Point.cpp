@@ -74,7 +74,7 @@ void Graph::APUtil(int u, bool visited[], int disc[], int low[], int parent[], b
 
 	visited[u] = true; 
 
-	disc[u] = low[u] = ++time; 
+	disc[u] = low[u] = ++time; //initially wehn we do DFS, we assign discovery time and low time equal //after the DFS recursion ends, low time reduces
 
 	list<int>::iterator i; 
 	for (i = adj[u].begin(); i != adj[u].end(); ++i) 
