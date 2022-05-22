@@ -90,10 +90,10 @@ void Graph::APUtil(int u, bool visited[], int disc[], int low[], int parent[], b
 			low[u] = min(low[u], low[v]); 
 
 
-			if (parent[u] == NIL && children > 1) 
-			ap[u] = true; 
-			if (parent[u] != NIL && low[v] >= disc[u]) 
-			ap[u] = true; 
+			if (parent[u] == NIL && children > 1)  //if more than 1 child (AND root Node...NO other parent), then surely an articulation point
+				ap[u] = true; 
+			if (parent[u] != NIL && low[v] >= disc[u])//if (NON parent root) && (NO back edge)......ek bhi NON back edge mil jaye, then true
+				ap[u] = true; 
 		} 
 
 		else if (v != parent[u]) 
