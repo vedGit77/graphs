@@ -1,4 +1,6 @@
-// An edge in an undirected connected graph is a bridge if removing it disconnects the graph. 
+//both articulation pts and bridges are for an undirected graph
+
+// An edge in an UNdirected connected graph is a bridge if removing it disconnects the graph. 
 // For a disconnected undirected graph, definition is similar, a bridge is an edge removing which increases number of disconnected components. 
 // Like Articulation Points, bridges represent vulnerabilities in a connected network and are useful for designing reliable networks
 
