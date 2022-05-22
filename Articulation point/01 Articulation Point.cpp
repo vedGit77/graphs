@@ -97,7 +97,7 @@ void Graph::APUtil(int u, bool visited[], int disc[], int low[], int parent[], b
 		}                              //because then the subgraphs would be connected even if we remove the parent
 						//thus we need ATLEAST 1 NON back edge to prove articulation point (parent MUST be non root)
 		
-		else if (v != parent[u]) 
+		else if (v != parent[u])    //keep updating the low[] array values if already visited that node (and that node is NOT parent)
 			low[u] = min(low[u], disc[v]); 
 	} 
 } 
