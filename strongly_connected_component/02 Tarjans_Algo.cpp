@@ -1,3 +1,6 @@
+// Kosaraju requires 2 traversals of an undirected graph
+
+
 #include<iostream> 
 #include <list> 
 #include <stack> 
