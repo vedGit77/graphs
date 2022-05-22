@@ -1,7 +1,8 @@
 // Kosaraju requires 2 traversals of an undirected graph
 // Tarjans algo requires only 1
 
-// Strongly Connected Component relates to directed graph only, but Disc and Low values relate to both directed and undirected graph
+// Strongly Connected Component relates to directed graph only, but Disc(discovery time) and Low values relate to both directed and undirected graph
+// cross edges give an issue only with Tarjans algo(strongly connected components)...so we ignore them here...we haven't ignored them anywhere else
 
 // A directed graph is strongly connected if there is a path between all pairs of vertices. 
 // A strongly connected component (SCC) of a directed graph is a maximal strongly connected subgraph.
@@ -10,11 +11,11 @@
 // 1. DFS search produces a DFS tree/forest 
 // 2. Strongly Connected Components form subtrees of the DFS tree. 
 // 3. If we can find the head of such subtrees, we can print/store all the nodes in that subtree (including head) and that will be one SCC. 
-// 4. There is no back edge from one SCC to another (There can be cross edges, but cross edges will not be used while processing the graph).
+// 4. There is NO back edge from one SCC to another (There CAN be cross edges, but cross edges will NOT be used while processing the graph)***IMP***
 
-// To find head of a SCC, we calculate disc and low array (as done for articulation point, bridge, biconnected component). 
-// As discussed in the previous posts, low[u] indicates earliest visited vertex (the vertex with minimum discovery time) that can be reached from 
-// subtree rooted with u. A node u is head if disc[u] = low[u].
+// To find head of a SCC, we calculate disc and low array (as done for articulation point, bridge)
+// low[u] indicates earliest visited vertex (the vertex with minimum discovery time) that can be reached from subtree rooted with u. 
+// A node u is head if disc[u] = low[u]  ***IMP & LOGICAL***
 
 // To track the subtree rooted at head, we can use a stack (keep pushing node while visiting). 
 // When a head node found, pop all nodes from stack till you get head out of stack.
