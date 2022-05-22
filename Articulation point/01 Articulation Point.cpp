@@ -93,9 +93,10 @@ void Graph::APUtil(int u, bool visited[], int disc[], int low[], int parent[], b
 			if (parent[u] == NIL && children > 1)  //if more than 1 child (AND root Node...NO other parent), then surely an articulation point
 				ap[u] = true; 
 			if (parent[u] != NIL && low[v] >= disc[u])//if (NON parent root) && (NO back edge)......ek bhi NON back edge mil jaye, then true
-				ap[u] = true; 
-		} 
-
+				ap[u] = true;  //think...if we get back edges from descendant to ancestor, then the parent WON'T be an articulation point
+		}                              //because then the subgraphs would be connected even if we remove the parent
+						//thus we need ATLEAST 1 NON back edge to prove articulation point (parent MUST be non root)
+		
 		else if (v != parent[u]) 
 			low[u] = min(low[u], disc[v]); 
 	} 
