@@ -1,4 +1,21 @@
-// A C++ program to find bridges in a given undirected graph 
+// An edge in an undirected connected graph is a bridge if removing it disconnects the graph. 
+// For a disconnected undirected graph, definition is similar, a bridge is an edge removing which increases number of disconnected components. 
+// Like Articulation Points, bridges represent vulnerabilities in a connected network and are useful for designing reliable networks
+
+
+// Naive soln:
+// 1) For every edge (u, v), do following 
+// …..a) Remove (u, v) from graph(adjacency list/matrix)
+// ..…b) See if the graph remains connected (We can either use BFS or DFS) 
+// …..c) Add (u, v) back to the graph.
+// Time complexity of above method is O(E*(V+E)) for a graph represented using adjacency list. 
+
+
+// Efficient solution is very similar to articulation point
+
+
+
+
 #include<iostream> 
 #include <list> 
 #define NIL -1 
