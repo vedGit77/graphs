@@ -44,8 +44,8 @@ vector<int> djikstra(int graph[V][V],int src)
 		
 		for (int v = 0; v < V; v++) 
 			if (graph[u][v]!=0 && fin[v] == false) 
-				dist[v] = min(dist[v],dist[u]+graph[u][v]); 
-	} 
+				dist[v] = min(dist[v],dist[u]+graph[u][v]); //in prims algo, its was min(dist[v],dist[u])
+	} 								    //since there we had to find min spanning tree...
     return dist;
 } 
 
