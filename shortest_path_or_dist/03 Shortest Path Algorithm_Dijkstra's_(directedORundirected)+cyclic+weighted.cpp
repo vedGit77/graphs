@@ -37,7 +37,7 @@ vector<int> djikstra(int graph[V][V],int src)
 		int u = -1; 			     //and there we used to print the sum of the array elements
 
 		for(int i=0;i<V;i++)
-		    if(!fin[i]&&(u==-1||dist[i]<dist[u]))
+		    if( !fin[i] && (u==-1||dist[i]<dist[u]) )
 		        u=i;
 		
 		fin[u] = true; 
