@@ -1,6 +1,6 @@
-//VVIMP NOTE: it works only FOR ACYCLIC GRAPHS!
+//VVIMP NOTE: it works ONLY FOR ACYCLIC graphs!
 
-//then how did we use it for cycle detection in directed graph??....we modified it using count variavle!
+//then how did we use it for cycle detection in directed graph??....we modified it using count variable!
 
 // The time complexity of topological sort using Kahn’s algorithm is O(V+E), where V = Vertices, E = Edges.
 // Space complexity = O(V)
