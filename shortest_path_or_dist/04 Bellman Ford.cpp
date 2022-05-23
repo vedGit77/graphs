@@ -60,28 +60,28 @@ void BellmanFord(struct Graph* graph, int src)
 
     for (int i = 1; i <= V - 1; i++) 
     { 
-      for (int j = 0; j < E; j++) {
-        
-        int u = graph->edge[j].src; 
-        int v = graph->edge[j].dest; 
-        int weight = graph->edge[j].weight; 
-        
-        if (dist[u] != INT_MAX && dist[u] + weight < dist[v]) 
-            dist[v] = dist[u] + weight; 
-      } 
+	      for (int j = 0; j < E; j++) 
+	      {
+			int u = graph->edge[j].src; 
+			int v = graph->edge[j].dest; 
+			int weight = graph->edge[j].weight; 
+
+			if (dist[u] != INT_MAX && dist[u] + weight < dist[v]) 
+			    dist[v] = dist[u] + weight; 
+	      } 
     } 
 
     for (int i = 0; i < E; i++) 
     { 
-        int u = graph->edge[i].src; 
-        int v = graph->edge[i].dest; 
-        int weight = graph->edge[i].weight; 
+		int u = graph->edge[i].src; 
+		int v = graph->edge[i].dest; 
+		int weight = graph->edge[i].weight; 
 
-        if (dist[u] != INT_MAX && dist[u] + weight < dist[v]) //obvio logic...always true if we have a -ive weight cycle
-        { 
-            printf("Graph contains negative weight cycle"); 
-            return; 
-        } 
+		if (dist[u] != INT_MAX && dist[u] + weight < dist[v]) //obvio logic...always true if we have a -ive weight cycle
+		{ 						 //(dist[u] + weight < dist[v]) will always be true...thus dist[v] will keep on decreasing
+			    printf("Graph contains negative weight cycle"); 
+			    return; 
+		} 
     } 
 
     printArr(dist, V); 
