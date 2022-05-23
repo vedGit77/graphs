@@ -1,5 +1,4 @@
-//VVIMP NOTE: it works only FOR ACYCLIC GRAPHS!
-
+//VVIMP NOTE: Khans Algo works ONLY for ACYCLIC GRAPHS (in Topological Sort)!
 //then how did we use it for cycle detection in directed graph??....we modified it using count variavle!
 
 
