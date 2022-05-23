@@ -58,9 +58,9 @@ void BellmanFord(struct Graph* graph, int src)
   
     dist[src] = 0; 
 
-    for (int i = 1; i <= V - 1; i++) 
+    for (int i = 1; i <= V - 1; i++) //all V-1 vertices are covered in the for loop
     { 
-	      for (int j = 0; j < E; j++) 
+	      for (int j = 0; j < E; j++)   
 	      {
 			int u = graph->edge[j].src; 
 			int v = graph->edge[j].dest; 
