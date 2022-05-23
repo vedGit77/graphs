@@ -87,7 +87,7 @@ void Graph::APUtil(int u, bool visited[], int disc[], int low[], int parent[], b
 			parent[v] = u; 
 			APUtil(v, visited, disc, low, parent, ap); 
 
-			low[u] = min(low[u], low[v]); 
+			low[u] = min(low[u], low[v]); //min(low[u],low[v]) is logical....immidiate descendant checking with parent
 
 
 			if (parent[u] == NIL && children > 1)  //if more than 1 child (AND root Node...NO other parent), then surely an articulation point
