@@ -98,7 +98,7 @@ void Graph::APUtil(int u, bool visited[], int disc[], int low[], int parent[], b
 						//thus we need ATLEAST 1 NON back edge to prove articulation point (parent MUST be non root)
 		
 		else if (v != parent[u])    //keep updating the low[] array values if already visited that node (and that node is NOT parent)
-			low[u] = min(low[u], disc[v]); 
+			low[u] = min(low[u], disc[v]); //NOT min(low[u],low[v])....since see the defn of low[] again...or see the photo attached
 	} 
 } 
 
