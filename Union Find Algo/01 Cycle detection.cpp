@@ -54,7 +54,7 @@ int isCycle(Graph* graph)
 
 	// Iterate through all edges of graph, find subset of both vertices of every edge, if both subsets are same, then there is cycle in graph.
 	for (int i = 0; i < graph->E; ++i) 
-  {
+  	{
 		int x = find(parent, graph->edge[i].src);
 		int y = find(parent, graph->edge[i].dest);
 
