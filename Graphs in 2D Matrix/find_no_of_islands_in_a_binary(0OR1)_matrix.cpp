@@ -8,7 +8,7 @@ class Solution {
 public:
     void dfs(vector<vector<char>>& grid,vector<vector<bool>>& visited, int i, int j)
     {
-        if(i<0 || j<0 || i>=grid.size() || j>=grid[0].size())  //base conditions
+        if(i<0 || j<0 || i>=grid.size() || j>=grid[0].size())  //base conditions...VVIMP...THIS MUST COME BEFORE THE 2nd BASE CONDN.
             return;
         if(visited[i][j]==true || grid[i][j]=='0')  //IMP base conditions..if '0', then return....or if visited, then return
             return;
