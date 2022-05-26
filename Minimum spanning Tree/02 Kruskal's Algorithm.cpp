@@ -1,3 +1,7 @@
+//EXPLAINED IN THE DISJOINT SET PART!
+
+
+
 // Below are the steps for finding MST using Kruskal’s algorithm
 // 1. Sort all the edges in non-decreasing order of their weight. 
 // 2. Pick the smallest edge. Check if it forms a cycle with the spanning tree formed so far. If cycle is not formed, include this edge. Else, discard it. 
