@@ -7,15 +7,14 @@ public:
 	int src, dest;
 };
 
-// a structure to represent a graph
 class Graph
 {
-public:
-	// V-> Number of vertices, E-> Number of edges
-	int V, E;
+	public:
+		// V-> Number of vertices, E-> Number of edges
+		int V, E;
 
-	// graph is represented as an array of edges
-	Edge* edge;
+		// graph is represented as an array of edges
+		Edge* edge;
 };
 
 // Creates a graph with V vertices and E edges
@@ -44,7 +43,7 @@ void Union(int parent[], int x, int y)
 	parent[x] = y;
 }
 
-// The main function to check whether a given graph contains cycle or not
+
 int isCycle(Graph* graph)
 {
 	// Allocate memory for creating V subsets
