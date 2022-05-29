@@ -6,6 +6,10 @@
 // if at some instance we find an adjacent node, thats already coloured, but with the SAME colour...then NOT bipartite 
 
 
+// Time Complexity: O(V + E), since in its whole, it is a DFS implementation, V – vertices; E – edges
+// Space Complexity: O(V), because, apart from the graph, we maintain a color array.
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
