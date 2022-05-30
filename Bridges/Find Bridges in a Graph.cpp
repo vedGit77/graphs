@@ -59,8 +59,7 @@ void Graph::addEdge(int v, int w)
 // visited[] --> keeps tract of visited vertices 
 // disc[] --> Stores discovery times of visited vertices 
 // parent[] --> Stores parent vertices in DFS tree 
-void Graph::bridgeUtil(int u, bool visited[], int disc[], 
-								int low[], int parent[]) 
+void Graph::bridgeUtil(int u, bool visited[], int disc[], int low[], int parent[]) 
 { 
 	// A static variable is used for simplicity, we can 
 	// avoid use of static variable by passing a pointer. 
