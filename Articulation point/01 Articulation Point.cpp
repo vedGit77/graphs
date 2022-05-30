@@ -118,11 +118,11 @@ void Graph::AP()
 		ap[i] = false; 
 	} 
 	
-	for (int i = 0; i < V; i++) 
+	for (int i = 0; i < V; i++)   //do with loop....to consider disconnected graphs too
 		if (visited[i] == false) 
 			APUtil(i, visited, disc, low, parent, ap); 
 
-	for (int i = 0; i < V; i++) 
+	for (int i = 0; i < V; i++) //to consider multiple articulation points
 		if (ap[i] == true) 
 			cout << i << " "; 
 } 
