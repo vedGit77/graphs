@@ -43,8 +43,9 @@ int primMST(int graph[V][V])
 
 		for (int v = 0; v < V; v++) //step 3c.//Update key value of all adjacent vertices of u.
 			if (graph[u][v]!=0 && mstSet[v] == false) 
-				key[v] = min(key[v],graph[u][v]); //in Dijsktras, it was min(key[v],key[u]+graph[u][v])
-	} 							  //since there we had to find shortest distance
+				key[v] = min(key[v],graph[u][v]); //since unvisited nodes ka key[] was infinite
+							 //in Dijsktras, it was min(key[v],key[u]+graph[u][v]) since there we had to find shortest distance
+	} 		
     return res;
 } 
 
