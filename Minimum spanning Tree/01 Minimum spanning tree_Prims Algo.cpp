@@ -30,9 +30,9 @@ int primMST(int graph[V][V])
 	fill(key,key+V,INT_MAX);
 	key[0]=0;
 
-	for (int count = 0; count < V ; count++) 
+	for (int count = 0; count < V ; count++) //outer loop
 	{ 
-		int u = -1; 
+		int u = -1; //after processing a vertex, u =-1 ...always initialized this way
 
 		for(int i=0;i<V;i++)  
 		    if(!mstSet[i] && (u==-1||key[i]<key[u])) 
