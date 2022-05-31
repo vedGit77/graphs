@@ -60,7 +60,7 @@ public:
                 int b=curr.second+x[1];
                 if(isvalid(a,b,n,m) && ans[a][b]==-1)
                 {
-                    q.push({a,b}); //pushing the next levels into bfs queue....
+                    q.push({a,b}); //pushing the next levels into bfs queue....//like first we finished for all matrix[i][j]==0...then pushing all these zeroes ke neighbours...so on
                     ans[a][b]=ans[curr.first][curr.second]+1;
                 }
             }
