@@ -37,7 +37,7 @@ vector<int> djikstra(int graph[V][V],int src)
 { 
 
 	vector<int> dist(V,INT_MAX);
-	dist[src]=0;
+	dist[src]=0;  //dist[src]=0 ,NOT dist[0]=0.....src can be anything we take our start point as...
 	vector<bool> fin(V,false);
 
 	for (int count = 0; count < V-1 ; count++)   // NOTE: count<(V-1)...since V-1 edges //exact same as prims algo
