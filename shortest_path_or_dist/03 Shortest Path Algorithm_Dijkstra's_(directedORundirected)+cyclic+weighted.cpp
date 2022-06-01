@@ -21,6 +21,14 @@
 //      then update the distance value of v. 
 
 
+//VVIMP NOTE:
+// When we are given: \
+//1. the edges matrix representing edges b/w 2 nodes a and b (edges[i] = [a,b]) 
+//2. a weight[] martix representing weight of edge bw a and b (weight[i] = wt of edges[i])
+//THEN:
+// we have to create a graph[V][V] matrix....V is the number of vertices...where graph[i][j] represents weight od edge bw i and j
+
+
 #include <bits/stdc++.h> 
 using namespace std; 
 #define V 4
