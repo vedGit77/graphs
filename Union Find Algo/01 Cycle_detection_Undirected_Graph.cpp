@@ -30,11 +30,11 @@ Graph* createGraph(int V, int E)
 }
 
 // A utility function to find the subset of an element i
-int find(int parent[], int i)
+int find(int parent[], int b)
 {
-	if (parent[i] == -1)
-		return i;
-	return find(parent, parent[i]);
+	if (parent[b] == -1)
+		return b;
+	return find(parent, parent[b]);
 }
 
 // A utility function to do union of two subsets
