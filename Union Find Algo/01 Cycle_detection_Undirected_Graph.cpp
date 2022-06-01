@@ -32,8 +32,8 @@ Graph* createGraph(int V, int E)
 // A utility function to find the subset of an element i
 int find(int parent[], int b)
 {
-	if (parent[b] == -1)
-		return b;
+	if (parent[b] == -1)  
+		return b; //basically a new set formed with only 1 element inside it (that element is b)
 	return find(parent, parent[b]);
 }
 
