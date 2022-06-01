@@ -40,7 +40,7 @@ vector<int> djikstra(int graph[V][V],int src)
 	dist[src]=0;
 	vector<bool> fin(V,false);
 
-	for (int count = 0; count < V-1 ; count++)   //exact same as prims algo
+	for (int count = 0; count < V-1 ; count++)   // NOTE: count<(V-1)...since V-1 edges //exact same as prims algo
 	{ 					     //just that here we need to print the distance array
 		int u = -1; 			     //and there we used to print the sum of the array elements
 
