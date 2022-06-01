@@ -26,7 +26,7 @@
 //1. the edges matrix representing edges b/w 2 nodes a and b (edges[i] = [a,b]) 
 //2. a weight[] martix representing weight of edge bw a and b (weight[i] = wt of edges[i])
 //THEN:
-// we have to create a graph[V][V] matrix....V is the number of vertices...where graph[i][j] represents weight od edge bw i and j
+// we have to create a graph[V][V] matrix....V is the number of vertices...where graph[i][j] represents weight of edge bw i and j
 
 
 #include <bits/stdc++.h> 
