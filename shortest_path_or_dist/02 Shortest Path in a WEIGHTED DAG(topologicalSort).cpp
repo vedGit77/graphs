@@ -1,5 +1,5 @@
 //DAG- directed acyclic graph
-//graph is weightes
+//graph is weighted
 //aim is to print shortest dist from source vertex to every other vertex
 //Overall time complexity of this algorithm is O(V+E).
 
