@@ -1,7 +1,7 @@
 //A few things to take care of:
-// 1. No visited array
-// 2. use min heap
-// 3. min heap should be of a pair
+// 1. No visited array!!!!because here we may traverse the same element multiple times (dont worry, we push new item only when if statement is true)
+// 2. use MIN heap
+// 3. min heap should be of a PAIR (distance,vectex)...since then the top element will be according to the SMALLEST distance
 // 4. here the adj should be of the form vector<vector<pair<int,int>>>adj.....basically vector of vector of a pair
 
 
@@ -75,7 +75,7 @@ void Graph::shortestPath(int src)
 
 		// 'i' is used to get all adjacent vertices of a vertex
 		list< pair<int, int> >::iterator i;
-		for (i = adj[u].begin(); i != adj[u].end(); ++i)
+		for (i = adj[u].begin(); i != adj[u].end(); ++i)  //OR for(auto i :adj[u])...simpler syntax
 		{
 			// Get vertex label and weight of current adjacent of u.
 			int v = (*i).first;
@@ -86,7 +86,7 @@ void Graph::shortestPath(int src)
 			{
 				// Updating distance of v
 				dist[v] = dist[u] + weight;
-				pq.push(make_pair(dist[v], v));
+				pq.push(make_pair(dist[v], v)); //OR pq.push({dist[v], v})...simpler syntax
 			}
 		}
 	}
