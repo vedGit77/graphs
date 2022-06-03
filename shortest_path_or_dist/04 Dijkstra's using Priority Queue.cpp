@@ -41,8 +41,7 @@ void Graph::addEdge(int u, int v, int w)
 // Prints shortest paths from src to all other vertices
 void Graph::shortestPath(int src)
 {
-	// Create a priority queue to store vertices that
-	// are being preprocessed. 
+	// we use MIN heap, not max heap...because we want min distance...so topmost element gives the min distance...
 	priority_queue< iPair, vector <iPair> , greater<iPair> > pq;//NOTE: priority_queue mei if we want MIN heap, ALWAYS THIS WIERD SYNTAX....vector<iPair> in the middle
 
 	// Create a vector for distances and initialize all
