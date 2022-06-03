@@ -1,15 +1,12 @@
-// Program to find Dijkstra's shortest path using
-// priority_queue in STL
 #include<bits/stdc++.h>
 using namespace std;
-# define INF 0x3f3f3f3f
 
+# define INF 0x3f3f3f3f
 // iPair ==> Integer Pair
 typedef pair<int, int> iPair;
 
 // To add an edge
-void addEdge(vector <pair<int, int> > adj[], int u,
-									int v, int wt)
+void addEdge(vector <pair<int, int> > adj[], int u,int v, int wt)
 {
 	adj[u].push_back(make_pair(v, wt));
 	adj[v].push_back(make_pair(u, wt));
@@ -19,11 +16,8 @@ void addEdge(vector <pair<int, int> > adj[], int u,
 // Prints shortest paths from src to all other vertices
 void shortestPath(vector<pair<int,int> > adj[], int V, int src)
 {
-	// Create a priority queue to store vertices that
-	// are being preprocessed. This is weird syntax in C++.
-	// Refer below link for details of this syntax
-	// http://geeksquiz.com/implement-min-heap-using-stl/
-	priority_queue< iPair, vector <iPair> , greater<iPair> > pq;
+	// Create a priority queue to store vertices that are being preprocessed.
+	priority_queue< iPair, vector <iPair> , greater<iPair> > pq; //NOTE: priority_queue mei if we want MIN heap, ALWAYS THIS WIERD SYNTAX....vector<iPair> in the middle
 
 	// Create a vector for distances and initialize all
 	// distances as infinite (INF)
@@ -38,8 +32,7 @@ void shortestPath(vector<pair<int,int> > adj[], int V, int src)
 	distances are not finalized) */
 	while (!pq.empty())
 	{
-		// The first vertex in pair is the minimum distance
-		// vertex, extract it from priority queue.
+		// The first vertex in pair is the minimum distance vertex, extract it from priority queue.
 		// vertex label is stored in second of pair (it
 		// has to be done this way to keep the vertices
 		// sorted distance (distance must be first item
@@ -50,8 +43,7 @@ void shortestPath(vector<pair<int,int> > adj[], int V, int src)
 		// Get all adjacent of u.
 		for (auto x : adj[u])
 		{
-			// Get vertex label and weight of current adjacent
-			// of u.
+			// Get vertex label and weight of current adjacent of u.
 			int v = x.first;
 			int weight = x.second;
 
@@ -71,13 +63,11 @@ void shortestPath(vector<pair<int,int> > adj[], int V, int src)
 		printf("%d \t\t %d\n", i, dist[i]);
 }
 
-// Driver program to test methods of graph class
 int main()
 {
 	int V = 9;
 	vector<iPair > adj[V];
 
-	// making above shown graph
 	addEdge(adj, 0, 1, 4);
 	addEdge(adj, 0, 7, 8);
 	addEdge(adj, 1, 2, 8);
