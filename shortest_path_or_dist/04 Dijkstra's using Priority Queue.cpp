@@ -1,3 +1,10 @@
+//A few things to take care of:
+// 1. No visited array
+// 2. use min heap
+// 3. min heap should be of a pair
+// 4. here the adj should be of the form vector<vector<pair<int,int>>>adj.....basically vector of vector of a pair
+
+
 #include<bits/stdc++.h>
 using namespace std;
 
