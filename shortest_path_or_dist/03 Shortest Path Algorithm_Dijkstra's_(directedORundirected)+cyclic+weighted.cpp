@@ -22,7 +22,7 @@
 
 
 //VVIMP NOTE:
-// When we are given: \
+// When we are given: 
 //1. the edges matrix representing edges b/w 2 nodes a and b (edges[i] = [a,b]) 
 //2. a weight[] martix representing weight of edge bw a and b (weight[i] = wt of edges[i])
 //THEN:
