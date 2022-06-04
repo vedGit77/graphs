@@ -37,7 +37,7 @@
 // where w is an ancestor of u and there is a back edge from some descendant of u to w.
 
 
-//code is very similar ot bridges in a graph...just 2 things extra...children array, and the 2 cases(if not yet visited)
+//code is very similar to bridges in a graph...just 2 things extra...children array, and the 2 cases(if not yet visited)
 	
 
 #include<iostream> 
