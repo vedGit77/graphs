@@ -100,9 +100,7 @@ void Graph::bridgeUtil(int u, bool visited[], int disc[], int low[], int parent[
 	} 
 } 
 
-// DFS based function to find all bridges. It uses recursive 
-// function bridgeUtil() 
-void Graph::bridge() 
+void Graph::bridge() //VVIMP....we have to make 2 functions.....1 se kaam NAHI hoga!!!...VVIMP....FOR BOTH BRIDGE AND ARTICULATION PT.
 { 
 	// Mark all the vertices as not visited 
 	bool *visited = new bool[V]; 
