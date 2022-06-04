@@ -81,7 +81,7 @@ void Graph::bridgeUtil(int u, bool visited[], int disc[], int low[], int parent[
 		if (!visited[v]) 
 		{ 
 			parent[v] = u; 
-			bridgeUtil(v, visited, disc, low, parent); 
+			bridgeUtil(v, visited, disc, low, parent); //remember to call it ....IMP!
 
 			// Check if the subtree rooted with v has a 
 			// connection to one of the ancestors of u 
