@@ -37,8 +37,14 @@
 // where w is an ancestor of u and there is a back edge from some descendant of u to w.
 
 
+
+
+
+
+
+
 //code is very similar to bridges in a graph...just 2 things extra...children array, and the 2 cases(if not yet visited)
-	
+//in both places low[u]=min().....u is parent	
 
 #include<iostream> 
 #include <list> 
