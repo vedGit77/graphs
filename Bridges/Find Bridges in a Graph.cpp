@@ -81,7 +81,7 @@ void Graph::bridgeUtil(int u, bool visited[], int disc[], int low[], int parent[
 		if (!visited[v]) 
 		{ 
 			parent[v] = u; 
-			bridgeUtil(v, visited, disc, low, parent); //remember to call it ....IMP!
+			bridgeUtil(v, visited, disc, low, parent); //remember to call it ....IMP!...then only we get low/disc time of v
 
 			// Check if the subtree rooted with v has a 
 			// connection to one of the ancestors of u 
@@ -94,9 +94,9 @@ void Graph::bridgeUtil(int u, bool visited[], int disc[], int low[], int parent[
 			cout << u <<" " << v << endl; 
 		} 
 
-		// Update low value of u for parent function calls. 
+		// if already visited AND NOT PARENT
 		else if (v != parent[u]) 
-			low[u] = min(low[u], disc[v]); 
+			low[u] = min(low[u], disc[v]); //NOT min(low[u], low[v])...IMP=>directed graph...edge points u=>v....if v is already visited does NOT mean u is visited
 	} 
 } 
 
