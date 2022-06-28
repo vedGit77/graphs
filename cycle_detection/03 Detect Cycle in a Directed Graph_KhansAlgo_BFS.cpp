@@ -9,18 +9,20 @@ void topologicalSort(vector<int> adj[], int V)
 { 
     vector<int> in_degree(V, 0); 
   
-    for (int u = 0; u < V; u++) { 
+    for (int u = 0; u < V; u++) 
+    { 
         for (int x:adj[u]) 
             in_degree[x]++; 
     } 
   
     queue<int> q; 
     for (int i = 0; i < V; i++) 
-        if (in_degree[i] == 0) 
+        if (in_degree[i] == 0) //IMP...initially push ones having in_degree 0
             q.push(i); 
 
     int count=0;  //exact same as topological/khans algo...just this count variable is extra
-    while (!q.empty()) { 
+    while (!q.empty()) 
+    { 
         int u = q.front(); 
         q.pop(); 
   
@@ -32,6 +34,7 @@ void topologicalSort(vector<int> adj[], int V)
 	}
         count++;  //counting the number of vertices popped 
     } 
+	
     if (count != V) {//whenever theres a cycle, surely (count < V), because the vertices of the cycle will always have (indegree > 0)
         cout << "There exists a cycle in the graph\n"; 
     }
