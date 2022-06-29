@@ -90,7 +90,7 @@ void Graph::shortestPath(int s)
 		Stack.pop(); 
  
 		list<AdjListNode>::iterator i; 
-		if (dist[u] != INF) 
+		if (dist[u] != INF) //since dist[u]==INF means NOT reachable from source
 		{ 
 			for (i = adj[u].begin(); i != adj[u].end(); ++i) 
 				if ( dist[i->getV()] > dist[u] + i->getWeight() ) //relax function
