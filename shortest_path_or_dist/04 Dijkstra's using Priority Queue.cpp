@@ -12,14 +12,12 @@ using namespace std;
 // iPair ==> Integer Pair
 typedef pair<int, int> iPair;
 
-// This class represents a directed graph using
-// adjacency list representation
+
 class Graph
 {
 	int V; // No. of vertices
 
-	// In a weighted graph, we need to store vertex
-	// and weight pair for every edge
+	// In a weighted graph, we need to store vertex and weight pair for every edge
 	list< pair<int, int> > *adj;
 
 public:
@@ -51,25 +49,14 @@ void Graph::shortestPath(int src)
 	// we use MIN heap, not max heap...because we want min distance...so topmost element gives the min distance...
 	priority_queue< iPair, vector <iPair> , greater<iPair> > pq;//NOTE: priority_queue mei if we want MIN heap, ALWAYS THIS WIERD SYNTAX....vector<iPair> in the middle
 
-	// Create a vector for distances and initialize all
-	// distances as infinite (INF)
 	vector<int> dist(V, INF);
 
-	// Insert source itself in priority queue and initialize
-	// its distance as 0.
+	// Insert source itself in priority queue and initialize its distance as 0.
 	pq.push(make_pair(0, src));
 	dist[src] = 0;
 
-	/* Looping till priority queue becomes empty (or all
-	distances are not finalized) */
 	while (!pq.empty())
 	{
-		// The first vertex in pair is the minimum distance
-		// vertex, extract it from priority queue.
-		// vertex label is stored in second of pair (it
-		// has to be done this way to keep the vertices
-		// sorted distance (distance must be first item
-		// in pair)
 		int u = pq.top().second;//pq.top().first always stores the minimum distance of vertex x from the source vertex, and pq.top().second stores the vertex no. x
 		pq.pop();
 
@@ -84,20 +71,17 @@ void Graph::shortestPath(int src)
 			// If there is shorted path to v through u.
 			if (dist[v] > dist[u] + weight)
 			{
-				// Updating distance of v
 				dist[v] = dist[u] + weight;
 				pq.push(make_pair(dist[v], v)); //OR pq.push({dist[v], v})...simpler syntax
 			}
 		}
 	}
 
-	// Print shortest distances stored in dist[]
 	printf("Vertex Distance from Source\n");
 	for (int i = 0; i < V; ++i)
 		printf("%d \t\t %d\n", i, dist[i]);
 }
 
-// Driver program to test methods of graph class
 int main()
 {
 	// create the graph given in above figure
