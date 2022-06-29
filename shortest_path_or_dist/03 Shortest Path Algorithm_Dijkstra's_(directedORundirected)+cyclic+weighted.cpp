@@ -49,6 +49,9 @@ vector<int> djikstra(int graph[V][V],int src)
 		    if( !fin[i] && (u==-1||dist[i]<dist[u])) //in prims algo, it was (u==-1||key[i]<key[u]) 
 		        u=i;
 		
+		//when loop1 and loop2 run for the very 1st time=> its guaranteed that u=src => because dist[src]=0
+		
+		
 		fin[u] = true; 
 		
 		for (int v = 0; v < V; v++)  //loop no.3 =>checking adjacents of u (since we are checking graph[u][v]!=0)
