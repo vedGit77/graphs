@@ -51,7 +51,7 @@ vector<int> djikstra(int graph[V][V],int src)
 		
 		fin[u] = true; 
 		
-		for (int v = 0; v < V; v++)  //loop no.3 =>checking adjacents of u (since we are checking graph[u][v]!=0
+		for (int v = 0; v < V; v++)  //loop no.3 =>checking adjacents of u (since we are checking graph[u][v]!=0)
 			if (graph[u][v]!=0 && fin[v] == false) 
 				dist[v] = min(dist[v],dist[u]+graph[u][v]); //in prims algo, its was key[v] = min(key[v],graph[u][v])
 	} 								    //since there we had to find min spanning tree...
