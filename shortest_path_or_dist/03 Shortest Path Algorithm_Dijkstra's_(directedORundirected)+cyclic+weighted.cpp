@@ -44,13 +44,14 @@ vector<int> djikstra(int graph[V][V],int src)
 	{ 					     //just that here we need to print the distance array
 		int u = -1; 			     //and there we used to print the sum of the array elements
 
-		for(int i=0;i<V;i++)
+		
+		for(int i=0;i<V;i++)  //loop no.2 => IMP! =>checking all vertices....so that we can get 'u'
 		    if( !fin[i] && (u==-1||dist[i]<dist[u])) //in prims algo, it was (u==-1||key[i]<key[u]) 
 		        u=i;
 		
 		fin[u] = true; 
 		
-		for (int v = 0; v < V; v++) 
+		for (int v = 0; v < V; v++)  //loop no.3 =>checking adjacents of u (since we are checking graph[u][v]!=0
 			if (graph[u][v]!=0 && fin[v] == false) 
 				dist[v] = min(dist[v],dist[u]+graph[u][v]); //in prims algo, its was key[v] = min(key[v],graph[u][v])
 	} 								    //since there we had to find min spanning tree...
