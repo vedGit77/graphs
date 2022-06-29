@@ -10,6 +10,9 @@
 // Space Complexity: O(V), because, apart from the graph, we maintain a color array.
 
 
+//if you think that finding cycle length (odd or even length) can tell us if bipartite or not...true...BUT IMPLEMENTATION IS VERY DIFFICULT
+//so use the method explained above
+
 #include <bits/stdc++.h>
 using namespace std;
 
