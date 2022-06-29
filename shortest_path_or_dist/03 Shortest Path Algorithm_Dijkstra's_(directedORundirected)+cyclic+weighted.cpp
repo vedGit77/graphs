@@ -45,7 +45,7 @@ vector<int> djikstra(int graph[V][V],int src)
 		int u = -1; 			     //and there we used to print the sum of the array elements
 
 		
-		for(int i=0;i<V;i++)  //loop no.2 => IMP! =>checking all vertices....so that we can get 'u'
+		for(int i=0;i<V;i++)  //loop no.2 => IMP! =>checking all vertices....so that we can get 'u'=> 'u' is UNvisited & has MIN dist from source
 		    if( !fin[i] && (u==-1||dist[i]<dist[u])) //in prims algo, it was (u==-1||key[i]<key[u]) 
 		        u=i;
 		
