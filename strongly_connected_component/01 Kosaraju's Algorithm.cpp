@@ -115,10 +115,10 @@ void Graph::printSCCs()
 int main() 
 { 
 	Graph g(5); 
-	g.addEdge(1, 0); 
-	g.addEdge(0, 2); 
-	g.addEdge(2, 1); 
-	g.addEdge(0, 3); 
+	g.addEdge(1, 0); 	//ans is in this order:
+	g.addEdge(0, 2);        // 0 1 2
+	g.addEdge(2, 1); 	// 3
+	g.addEdge(0, 3); 	// 4
 	g.addEdge(3, 4); 
 
 	cout << "Following are strongly connected components in given graph \n"; 
