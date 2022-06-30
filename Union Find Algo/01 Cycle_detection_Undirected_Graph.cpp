@@ -50,7 +50,7 @@ int isCycle(Graph* graph)
 
 	memset(parent, -1, sizeof(int) * graph->V); // -1 initialization..... -1 means its representative of its own set
 
-	for (int i = 0; i < graph->E; ++i) // Iterate through all edges of graph
+	for (int i = 0; i < graph->E; ++i) // Iterate through ALL EDGES of graph
   	{
 		int x = find(parent, graph->edge[i].src);  // x is source
 		int y = find(parent, graph->edge[i].dest); // y is destination
