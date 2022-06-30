@@ -70,7 +70,7 @@ void Graph::addEdge(int v, int w)
 	  adj[v].push_back(w); 
 } 
 
-void Graph::fillOrder(int v, bool visited[], stack<int> &s) 
+void Graph::fillOrder(int v, bool visited[], stack<int> &s) //topo sort
 { 
     visited[v] = true; 
 
