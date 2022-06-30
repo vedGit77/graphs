@@ -56,11 +56,11 @@ int isCycle(Graph* graph)
 		int y = find(parent, graph->edge[i].dest); // y is destination
 
 		if (x == y)
-			return 1;  
+			return 1;  //cycle detected
     
 		Union(parent, x, y);
 	}
-	return 0;
+	return 0; //not detected
 }
 
 
