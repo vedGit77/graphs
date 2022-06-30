@@ -39,7 +39,7 @@ int find(int parent[], int b)
 // A utility function to do union of two subsets
 void Union(int parent[], int x, int y)
 {
-	parent[x] = y;
+	parent[x] = y;  //always make parent as destination vertex...we have standardized it this way
 }
 
 
@@ -52,8 +52,8 @@ int isCycle(Graph* graph)
 
 	for (int i = 0; i < graph->E; ++i) // Iterate through all edges of graph
   	{
-		int x = find(parent, graph->edge[i].src);
-		int y = find(parent, graph->edge[i].dest);
+		int x = find(parent, graph->edge[i].src);  // x is source
+		int y = find(parent, graph->edge[i].dest); // y is destination
 
 		if (x == y)
 			return 1;  
