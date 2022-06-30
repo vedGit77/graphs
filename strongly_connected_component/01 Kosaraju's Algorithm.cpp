@@ -94,12 +94,12 @@ void Graph::printSCCs()
       if(visited[i] == false) 
         fillOrder(i, visited, s); 
 
-    Graph gr = getTranspose(); 
+    Graph gr = getTranspose(); //transpose
 
     for(int i = 0; i < V; i++) 
       visited[i] = false; 
 
-    while (s.empty() == false) 
+    while (s.empty() == false) //dfs traversal
     { 
       int v = s.top(); 
       s.pop(); 
