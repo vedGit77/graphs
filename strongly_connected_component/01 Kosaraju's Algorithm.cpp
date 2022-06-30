@@ -7,7 +7,7 @@
 
 // Following is detailed Kosaraju’s algorithm.
 // 1) Create an empty stack ‘S’ and do DFS traversal of a graph. In DFS traversal, 
-//    after calling recursive DFS for adjacent vertices of a vertex, push the vertex to stack. 
+//    after calling recursive DFS for adjacent vertices of a vertex, push the vertex to stack. ....step1 is basically TOPOLOGICAL SORT!
 // 2) Reverse directions of all arcs to obtain the transpose graph.
 // 3) One by one pop a vertex from S while S is not empty. Let the popped vertex be ‘v’. 
 //    Take v as source and do DFS (call DFSUtil(v)). The DFS starting from v prints strongly connected component of v. 
@@ -90,7 +90,7 @@ void Graph::printSCCs()
     for(int i = 0; i < V; i++) 
       visited[i] = false; 
 
-    for(int i = 0; i < V; i++) 
+    for(int i = 0; i < V; i++) //basically TOPOLOGICAL SORT!
       if(visited[i] == false) 
         fillOrder(i, visited, s); 
 
