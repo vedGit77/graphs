@@ -17,7 +17,6 @@ class Graph
 		Edge* edge;
 };
 
-// Creates a graph with V vertices and E edges
 Graph* createGraph(int V, int E)
 {
 	Graph* graph = new Graph();
@@ -49,8 +48,7 @@ int isCycle(Graph* graph)
 	// Allocate memory for creating V subsets
 	int* parent = new int[graph->V * sizeof(int)];
 
-	// Initialize all subsets as single element sets
-	memset(parent, -1, sizeof(int) * graph->V);
+	memset(parent, -1, sizeof(int) * graph->V); // -1 initialization..... -1 means its representative of its own set
 
 	// Iterate through all edges of graph, find subset of both vertices of every edge, if both subsets are same, then there is cycle in graph.
 	for (int i = 0; i < graph->E; ++i) 
