@@ -50,8 +50,7 @@ int isCycle(Graph* graph)
 
 	memset(parent, -1, sizeof(int) * graph->V); // -1 initialization..... -1 means its representative of its own set
 
-	// Iterate through all edges of graph, find subset of both vertices of every edge, if both subsets are same, then there is cycle in graph.
-	for (int i = 0; i < graph->E; ++i) 
+	for (int i = 0; i < graph->E; ++i) // Iterate through all edges of graph
   	{
 		int x = find(parent, graph->edge[i].src);
 		int y = find(parent, graph->edge[i].dest);
