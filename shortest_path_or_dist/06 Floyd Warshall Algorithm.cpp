@@ -1,5 +1,9 @@
 //Floyd Warshall Algorithm....Graphs + DP
 
+Time Complexity: O(V3)
+
+Auxiliary Space: O(V2)
+
 // The problem is to find shortest distances between every pair of vertices in a given edge weighted directed Graph. 
 
 //EXAMPLE:
