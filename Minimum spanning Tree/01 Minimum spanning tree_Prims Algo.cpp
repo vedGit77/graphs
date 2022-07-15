@@ -1,3 +1,6 @@
+// Prims Algo-> O(v^2) ->sometimes gives TLE
+
+
 // What is Minimum Spanning Tree? 
 // Given a connected and undirected graph, a spanning tree of that graph is a subgraph that is a tree and connects all the vertices together. 
 // A single graph can have many different spanning trees. A minimum spanning tree (MST) or minimum weight spanning tree for a 
