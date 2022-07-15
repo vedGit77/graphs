@@ -101,18 +101,13 @@ int Graph::kruskalMST()  /* Functions returns weight of the MST*/
 		int set_u = ds.find(u);
 		int set_v = ds.find(v);
 
-		// Check if the selected edge is creating a cycle or not 
-		//(Cycle is created if u and v belong to same set)
-		if (set_u != set_v)
+		if (set_u != set_v)  //(Cycle is created if u and v belong to same set)
 		{
-			// Current edge will be in the MST so print it
-			cout << u << " - " << v << endl;
+			cout << u << " - " << v << endl;  // Current edge will be in the MST so print it
 
-			// Update MST weight
 			mst_wt += it->first;
 
-			// Merge two sets
-			ds.merge(set_u, set_v);
+			ds.merge(set_u, set_v);  // Merge two sets....while merging...find parents....then compare RANK OF PARENTS!
 		}
 	}
 
