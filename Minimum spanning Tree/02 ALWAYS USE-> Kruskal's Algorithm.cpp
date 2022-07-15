@@ -14,30 +14,24 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// Creating shortcut for an integer pair
-typedef pair<int, int> iPair;
+typedef pair<int, int> iPair;  // Creating shortcut for an integer pair
 
-// Structure to represent a graph
 struct Graph
 {
 	int V, E;
 	vector< pair<int, iPair> > edges;
 
-	// Constructor
-	Graph(int V, int E)
+	Graph(int V, int E)  //constructor
 	{
 		this->V = V;
 		this->E = E;
 	}
 
-	// Utility function to add an edge
-	void addEdge(int u, int v, int w)
+	void addEdge(int u, int v, int w)  	// Utility function to add an edge
 	{
-		edges.push_back({w, {u, v}});
+		edges.push_back({w, {u, v}});  //IMP...push_back(int,pair<int,int>)....push_back(weight,{src,destination})....so that we can sort by weight
 	}
 
-	// Function to find MST using Kruskal's
-	// MST algorithm
 	int kruskalMST();
 };
 
@@ -47,22 +41,16 @@ struct DisjointSets
 	int *parent, *rnk;
 	int n;
 
-	// Constructor.
-	DisjointSets(int n)
+	DisjointSets(int n) // Constructor
 	{
-		// Allocate memory
-		this->n = n;
+		this->n = n;  // Constructor.
 		parent = new int[n+1];
 		rnk = new int[n+1];
 
-		// Initially, all vertices are in
-		// different sets and have rank 0.
-		for (int i = 0; i <= n; i++)
+		for (int i = 0; i <= n; i++)   
 		{
-			rnk[i] = 0;
-
-			//every element is parent of itself
-			parent[i] = i;
+			rnk[i] = 0;     // Initially, all vertices are in different sets and have rank 0.
+			parent[i] = i;  //every element is parent of itself
 		}
 	}
 
@@ -77,38 +65,33 @@ struct DisjointSets
 		return parent[u];
 	}
 
-	// Union by rank
-	void merge(int x, int y)
+	void merge(int x, int y)    // Union by rank....VVIMP!...reduces time
 	{
 		x = find(x), y = find(y);
 
-		/* Make tree with smaller height
-		a subtree of the other tree */
-		if (rnk[x] > rnk[y])
+		if (rnk[x] > rnk[y])         //Make tree with smaller height a subtree of the other tree 
 			parent[y] = x;
-		else // If rnk[x] <= rnk[y]
+		else if(rnk[x] < rnk[y])
 			parent[x] = y;
-
-		if (rnk[x] == rnk[y])
+		else
+		{
+			parent[x] = y;
 			rnk[y]++;
+		}
 	}
 };
 
-/* Functions returns weight of the MST*/
 
-int Graph::kruskalMST()
+int Graph::kruskalMST()  /* Functions returns weight of the MST*/
 {
 	int mst_wt = 0; // Initialize result
 
-	// Sort edges in increasing order on basis of cost
-	sort(edges.begin(), edges.end());
+	sort(edges.begin(), edges.end());  // Sort edges in increasing order on basis of cost
 
-	// Create disjoint sets
-	DisjointSets ds(V);
+	DisjointSets ds(V); //create disjoint set....tyo create...all we need is a 'parent' and 'rank' array
 
-	// Iterate through all sorted edges
 	vector< pair<int, iPair> >::iterator it;
-	for (it=edges.begin(); it!=edges.end(); it++)
+	for (it=edges.begin(); it!=edges.end(); it++)  	// Iterate through all sorted edges
 	{
 		int u = it->second.first;
 		int v = it->second.second;
@@ -116,13 +99,11 @@ int Graph::kruskalMST()
 		int set_u = ds.find(u);
 		int set_v = ds.find(v);
 
-		// Check if the selected edge is creating
-		// a cycle or not (Cycle is created if u
-		// and v belong to same set)
+		// Check if the selected edge is creating a cycle or not 
+		//(Cycle is created if u and v belong to same set)
 		if (set_u != set_v)
 		{
-			// Current edge will be in the MST
-			// so print it
+			// Current edge will be in the MST so print it
 			cout << u << " - " << v << endl;
 
 			// Update MST weight
