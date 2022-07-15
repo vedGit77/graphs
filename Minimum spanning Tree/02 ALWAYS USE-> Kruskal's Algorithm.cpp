@@ -1,5 +1,5 @@
 //ALSO IN THE DISJOINT SET PART!
-
+//can also be used in cycle detection
 
 
 // Below are the steps for finding MST using Kruskal’s algorithm
