@@ -1,4 +1,4 @@
-//EXPLAINED IN THE DISJOINT SET PART!
+//ALSO IN THE DISJOINT SET PART!
 
 
 
@@ -7,6 +7,9 @@
 // 2. Pick the smallest edge. Check if it forms a cycle with the spanning tree formed so far. If cycle is not formed, include this edge. Else, discard it. 
 // 3. Repeat step#2 until there are (V-1) edges in the spanning tree.
 
+// Step #2 uses the Union-Find algorithm to detect cycles.
+// The algorithm is a Greedy Algorithm. 
+// The Greedy Choice is to pick the smallest weight edge that does not cause a cycle in the MST(min spanning tree) constructed so far. 
 
 #include<bits/stdc++.h>
 using namespace std;
