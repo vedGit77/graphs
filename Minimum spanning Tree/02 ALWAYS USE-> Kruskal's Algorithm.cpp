@@ -90,7 +90,8 @@ int Graph::kruskalMST()  /* Functions returns weight of the MST*/
 
 	sort(edges.begin(), edges.end());  // Sort edges in increasing order on basis of cost
 
-	DisjointSets ds(V); //create disjoint set....tyo create...all we need is a 'parent' and 'rank' array
+	//this disjoint set is mainly important
+	DisjointSets ds(V); //create disjoint set....to create...all we need is a 'parent' and 'rank' array -> ****IMP****
 
 	vector< pair<int, iPair> >::iterator it;
 	for (it=edges.begin(); it!=edges.end(); it++)  	// Iterate through all sorted edges
