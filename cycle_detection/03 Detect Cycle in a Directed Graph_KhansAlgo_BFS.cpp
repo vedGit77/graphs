@@ -2,6 +2,12 @@
 //then how did we use it for cycle detection in directed graph??....we modified it using count variavle!
 
 
+//We can NOT use the same method as cycle detection in undirected graph
+// eg  1 -> 2 -> 3 <- - 
+//     |              |
+//     - - -> 4 - - - -
+// NOT a cycle....but the undirected graph cycle detection code will say that theres a cycle
+
 #include<bits/stdc++.h> 
 using namespace std; 
 
