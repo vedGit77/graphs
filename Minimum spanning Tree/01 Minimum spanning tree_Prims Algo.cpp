@@ -1,4 +1,8 @@
+//DONT USE PRIMS!
 // Prims Algo-> O(v^2) ->sometimes gives TLE
+
+
+//THUS USE KRUSKAL ALWAYS
 
 
 // What is Minimum Spanning Tree? 
