@@ -92,8 +92,7 @@ void floydWarshall(int graph[][V])
 			for (j = 0; j < V; j++) // Pick all vertices as destination for the above picked source
 			{
 				// If vertex k is on the shortest path from i to j, then update the value of dist[i][j]
-				if ( dist[i][j] > (dist[i][k] + dist[k][j]) //condition-1
-				    && (dist[k][j] != INF && dist[i][k] != INF)) //condition-2
+				if ( dist[i][j] > (dist[i][k] + dist[k][j])   &&   (dist[k][j] != INF && dist[i][k] != INF)) //BLUNDER -> DONT put a condition of dist[i][j]!=INF -> since possible that i and j are not connected directly, but can be connected like i->k->j
 					dist[i][j] = dist[i][k] + dist[k][j];
 			}
 		}
