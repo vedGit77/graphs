@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Tree node structure used in the program */
 struct Node {
 	int data;
 	Node* left, *right;
@@ -20,9 +19,9 @@ int height(Node* root, int& ans)
 	// update the answer, because diameter of a
 	// tree is nothing but maximum value of
 	// (left_height + right_height + 1) for each node
-	ans = max(ans, 1 + left_height + right_height);
+	ans = max(ans, 1 + left_height + right_height);   //ans is used for diameter ->not of use in this height function
 
-	return 1 + max(left_height, right_height);
+	return 1 + max(left_height, right_height);  //this returns height
 }
 
 /* Computes the diameter of binary tree with given root. */
