@@ -71,10 +71,10 @@ public:
             return root;   //imp
         
         if(r!=NULL)
-            return r;     //imp...not root
+            return r;    
         if(l!=NULL)
-            return l;    //imp...not root
+            return l;    
         
-        return NULL;
+        return NULL;  //IMP -> return NULL ->NOT root ->I was doing this mistake
     }
 };
