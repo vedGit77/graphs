@@ -73,16 +73,18 @@ void Graph::bridgeUtil(int u, bool visited[], int disc[], int low[], int parent[
 		{ 
 			parent[v] = u; 
 			
-			bridgeUtil(v, visited, disc, low, parent); //remember to call it ....IMP!...then only we get low/disc time of v
+			//No children++ here like articulation points
+			
+			bridgeUtil(v, visited, disc, low, parent); 
 
 			low[u] = min(low[u], low[v]); 
 
-			if (low[v] > disc[u])  //condn for bridge
+			if (low[v] > disc[u])  //NOT >=
 				cout << u <<" " << v << endl; 
 		} 
 
-		else if (v != parent[u])      // if already visited AND NOT PARENT
-			low[u] = min(low[u], disc[v]); //NOT min(low[u], low[v])...IMP=>directed graph...edge points u=>v....if v is already visited does NOT mean u is visited
+		else if (v != parent[u])      
+			low[u] = min(low[u], disc[v]);
 	} 
 } 
 
