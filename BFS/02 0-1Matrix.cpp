@@ -1,5 +1,5 @@
 //Given an m x n binary matrix mat, return the distance of the nearest 0 for each cell.
-//The distance between two adjacent cells is 1.
+//The distance between two adjacent cells is 1 (l,r,u,d directions allowed)
 
 // ques link:
 // https://leetcode.com/problems/01-matrix/
