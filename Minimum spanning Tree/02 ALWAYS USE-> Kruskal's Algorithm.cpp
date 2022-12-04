@@ -55,19 +55,17 @@ struct DisjointSets
 			parent[i] = i;  //every element is parent of itself
 		}
 	}
+	
+	//both pathcompression and union by find are COMBINED in kruskal!!! => best time complexity
 
-	// Find the parent of a node 'u'
-	// Path Compression
-	int find(int u)
+	int find(int u)  // Path Compression
 	{
-		/* Make the parent of the nodes in the path
-		from u--> parent[u] point to parent[u] */
 		if (u != parent[u])
 			parent[u] = find(parent[u]);
 		return parent[u];
 	}
 
-	void merge(int x, int y)    // Union by rank....VVIMP!...reduces time
+	void merge(int x, int y)    // Union by rank
 	{
 		x = find(x), y = find(y);
 
