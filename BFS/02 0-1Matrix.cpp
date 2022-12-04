@@ -32,13 +32,13 @@ public:
         return true;
     }
     
-    vector<vector<int>> direction={{1,0},{0,1},{0,-1},{-1,0}};
+    vector<vector<int>> direction = {{1,0},{0,1},{0,-1},{-1,0}};
     
     vector<vector<int>> updateMatrix(vector<vector<int>>& matrix) 
     {
         queue<pair<int,int>> q;
-        int n=matrix.size();
-        int m=matrix[0].size();
+        int n = matrix.size();
+        int m = matrix[0].size();
         vector<vector<int>> ans(n,vector<int>(m,-1));
         
         for(int i=0;i<n;i++)
@@ -55,12 +55,12 @@ public:
         
         while(!q.empty())
         {
-            pair<int,int> curr=q.front();
+            pair<int,int> curr = q.front();
             q.pop();
             for(auto& x:direction)
             {
-                int a=curr.first+x[0];
-                int b=curr.second+x[1];
+                int a=curr.first + x[0];
+                int b=curr.second + x[1];
                 if(isvalid(a,b,n,m) && ans[a][b]==-1)
                 {
                     q.push({a,b}); //pushing the next levels into bfs queue....//like first we finished for all matrix[i][j]==0...then pushing all these zeroes ke neighbours...so on
