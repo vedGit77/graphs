@@ -90,7 +90,7 @@ void Graph::APUtil(int u, bool visited[], int disc[], int low[], int parent[], b
 	{ 
 		int v = *i;
 
-		if (!visited[v]) 
+		if (!visited[v]) //descendants of a node are NOT visited
 		{ 
 			children++; 
 			parent[v] = u; 
