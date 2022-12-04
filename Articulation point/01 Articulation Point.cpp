@@ -94,7 +94,7 @@ void Graph::APUtil(int u, bool visited[], int disc[], int low[], int parent[], b
 		{ 
 			children++; 
 			parent[v] = u; 
-			APUtil(v, visited, disc, low, parent, ap); //IMP: recursion...then only we will get low[v] and disc[v]
+			APUtil(v, visited, disc, low, parent, ap); //IMP: recursion=> then only we will get children, parent, low and disc time (initially we will set low and disc equal) for each node
 
 			low[u] = min(low[u], low[v]); //min(low[u],low[v]) is logical....immidiate descendant checking with parent
 
