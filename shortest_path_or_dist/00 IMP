@@ -1,4 +1,4 @@
-When we have unweighted graph -> use BFS
+When we have UN-weighted graph -> use BFS
 
 When we have weighted graph (NO -ive edge) -> use Dijkstra with PRIORITY QUEUE
 
