@@ -16,6 +16,7 @@ int height(Node* root, int& ans)
 
 	int right_height = height(root->right, ans);
 
+	//EXCEPT for this line, all code is for ht. of a binary tree
 	ans = max(ans, 1 + left_height + right_height);   //ans is used for diameter ->not of use in this height function
 
 	return 1 + max(left_height, right_height);  //this returns height
