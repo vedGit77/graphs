@@ -47,7 +47,7 @@ void Graph::addEdge(int u, int v, int w)
 void Graph::shortestPath(int src)
 {
 	// we use MIN heap, not max heap...because we want min distance...so topmost element gives the min distance...
-	priority_queue< iPair, vector <iPair> , greater<iPair> > pq;//NOTE: priority_queue mei if we want MIN heap, ALWAYS THIS WIERD SYNTAX....vector<iPair> in the middle
+	priority_queue< iPair, vector <iPair> , greater<iPair> > pq;    //NOTE: priority_queue mei if we want MIN heap, ALWAYS THIS WIERD SYNTAX....vector<iPair> in the middle
 
 	vector<int> dist(V, INF);
 
@@ -57,12 +57,12 @@ void Graph::shortestPath(int src)
 
 	while (!pq.empty())
 	{
-		int u = pq.top().second;//pq.top().first always stores the minimum distance of vertex x from the source vertex, and pq.top().second stores the vertex no. x
+		int u = pq.top().second;    //pq.top().first always stores the minimum distance of vertex x from the source vertex, and pq.top().second stores the vertex no. x
 		pq.pop();
 
 		// 'i' is used to get all adjacent vertices of a vertex
 		list< pair<int, int> >::iterator i;
-		for (i = adj[u].begin(); i != adj[u].end(); ++i)  //OR for(auto i :adj[u])...simpler syntax
+		for (i = adj[u].begin(); i != adj[u].end(); ++i)   //OR for(auto i :adj[u])...simpler syntax
 		{
 			// Get vertex label and weight of current adjacent of u.
 			int v = (*i).first;
@@ -72,7 +72,7 @@ void Graph::shortestPath(int src)
 			if (dist[v] > dist[u] + weight)
 			{
 				dist[v] = dist[u] + weight;
-				pq.push(make_pair(dist[v], v)); //OR pq.push({dist[v], v})...simpler syntax
+				pq.push(make_pair(dist[v], v));    //OR pq.push({dist[v], v})...simpler syntax
 			}
 		}
 	}
