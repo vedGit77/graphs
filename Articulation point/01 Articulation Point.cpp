@@ -74,7 +74,7 @@ void Graph::addEdge(int v, int w)
 	adj[w].push_back(v); 
 } 
 
-void Graph::APUtil(int u, bool visited[], int disc[], int low[], int parent[], bool ap[]) 
+void Graph::APUtil(int u, bool visited[], int disc[], int low[], int parent[], bool ap[]) //ALL PASSED BY REFERENCE => since all are arrays
 { 
 	 
 	static int time = 0;  //static int hai...instead of this, we could also do=> APUtil(..., int & time, ...) =>same thing
