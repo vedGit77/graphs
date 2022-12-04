@@ -1,4 +1,8 @@
-//VVIMP NOTE: it works ONLY FOR ACYCLIC graphs!
+//Topological sorting for Directed Acyclic Graph (DAG) is a linear ordering of vertices such that for every directed edge u->v 
+// vertex u comes before v in the ordering.
+
+// Note: WORKS ONLY FOR DAG (DIRECTED ACYCLIC GRAPH)!
+
 
 //then how did we use it for cycle detection in directed graph??....we modified it using count variable!
 
