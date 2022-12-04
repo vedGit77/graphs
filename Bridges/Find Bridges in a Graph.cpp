@@ -56,41 +56,32 @@ void Graph::addEdge(int v, int w)
 
 void Graph::bridgeUtil(int u, bool visited[], int disc[], int low[], int parent[]) //ALL ARE PASSED BY REFERENCE => just like articulation points
 { 
-	// A static variable is used for simplicity, we can 
-	// avoid use of static variable by passing a pointer. 
-	static int time = 0; 
+	static int time = 0; //instead of static int, we could simply do => void bridgeUtil(..., int & time, ...) =>just like articulation points
 
-	// Mark the current node as visited 
 	visited[u] = true; 
 
-	// Initialize discovery time and low value 
 	disc[u] = low[u] = ++time; 
+	
+	//NO NEED of children variable here (was needed in articulation pts)
 
-	// Go through all vertices aadjacent to this 
 	list<int>::iterator i; 
 	for (i = adj[u].begin(); i != adj[u].end(); ++i) 
 	{ 
-		int v = *i; // v is current adjacent of u 
+		int v = *i; 
 
-		// If v is not visited yet, then recur for it 
 		if (!visited[v]) 
 		{ 
 			parent[v] = u; 
+			
 			bridgeUtil(v, visited, disc, low, parent); //remember to call it ....IMP!...then only we get low/disc time of v
 
-			// Check if the subtree rooted with v has a 
-			// connection to one of the ancestors of u 
 			low[u] = min(low[u], low[v]); 
 
-			// If the lowest vertex reachable from subtree 
-			// under v is below u in DFS tree, then u-v 
-			// is a bridge 
-			if (low[v] > disc[u]) 
-			cout << u <<" " << v << endl; 
+			if (low[v] > disc[u])  //condn for bridge
+				cout << u <<" " << v << endl; 
 		} 
 
-		// if already visited AND NOT PARENT
-		else if (v != parent[u]) 
+		else if (v != parent[u])      // if already visited AND NOT PARENT
 			low[u] = min(low[u], disc[v]); //NOT min(low[u], low[v])...IMP=>directed graph...edge points u=>v....if v is already visited does NOT mean u is visited
 	} 
 } 
