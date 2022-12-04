@@ -1,4 +1,4 @@
-//both articulation pts and bridges are for an undirected graph
+//both articulation pts and bridges are for an UNdirected graph
 
 // An edge in an UNdirected connected graph is a bridge if removing it disconnects the graph. 
 // For a disconnected undirected graph, definition is similar, a bridge is an edge removing which increases number of disconnected components. 
@@ -22,13 +22,16 @@
 // The condition for an edge (u, v) to be a bridge is, “low[v] > disc[u]”. 
 
 
+//DIFF BW articulation pts and bridges ka code => 1) No children variable needed here
+//						  2) Condn for bridge / articulation 
+
+
 
 #include<iostream> 
 #include <list> 
 #define NIL -1 
 using namespace std; 
 
-// A class that represents an undirected graph 
 class Graph 
 { 
 	int V; // No. of vertices 
