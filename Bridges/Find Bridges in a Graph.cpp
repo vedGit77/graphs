@@ -53,13 +53,8 @@ void Graph::addEdge(int v, int w)
 	adj[w].push_back(v); // Note: the graph is undirected 
 } 
 
-// A recursive function that finds and prints bridges using 
-// DFS traversal 
-// u --> The vertex to be visited next 
-// visited[] --> keeps tract of visited vertices 
-// disc[] --> Stores discovery times of visited vertices 
-// parent[] --> Stores parent vertices in DFS tree 
-void Graph::bridgeUtil(int u, bool visited[], int disc[], int low[], int parent[]) 
+
+void Graph::bridgeUtil(int u, bool visited[], int disc[], int low[], int parent[]) //ALL ARE PASSED BY REFERENCE => just like articulation points
 { 
 	// A static variable is used for simplicity, we can 
 	// avoid use of static variable by passing a pointer. 
