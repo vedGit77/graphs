@@ -77,7 +77,7 @@ void Graph::addEdge(int v, int w)
 void Graph::APUtil(int u, bool visited[], int disc[], int low[], int parent[], bool ap[]) 
 { 
 	 
-	static int time = 0;  //static int hai...thus increments every time
+	static int time = 0;  //static int hai...instead of this, we could also do=> APUtil(..., int & time, ...) =>same thing
 
 	int children = 0; 
 
