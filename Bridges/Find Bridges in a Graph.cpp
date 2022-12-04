@@ -78,7 +78,7 @@ void Graph::bridgeUtil(int u, bool visited[], int disc[], int low[], int parent[
 			
 			//No children++ here like articulation points
 			
-			bridgeUtil(v, visited, disc, low, parent); 
+			bridgeUtil(v, visited, disc, low, parent); //recursion 
 
 			low[u] = min(low[u], low[v]); 
 
