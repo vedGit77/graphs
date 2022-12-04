@@ -2,7 +2,7 @@
 // vertex u comes before v in the ordering.
 
 // Note: WORKS ONLY FOR DAG (DIRECTED ACYCLIC GRAPH)!
-
+// Note: Topo sorting of a graph may NOT be unique.
 
 //then how did we use it for cycle detection in directed graph??....we modified it using count variable!
 
