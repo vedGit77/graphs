@@ -60,6 +60,9 @@ struct DisjointSets
 
 	int find(int u)  // Path Compression
 	{
+		if (u == parent[u])
+			return parent[u];
+		
 		if (u != parent[u])
 			parent[u] = find(parent[u]);
 		return parent[u];
