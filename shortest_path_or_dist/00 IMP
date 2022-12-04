@@ -1,0 +1,7 @@
+When we have unweighted graph -> use BFS
+
+When we have weighted graph (NO -ive edge) -> use Dijkstra with PRIORITY QUEUE
+
+When we have weighted graph with -ive edge -> use Bellman Ford
+
+When we need min dist bw every pair of vertices -> Floyd Warshall
