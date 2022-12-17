@@ -70,16 +70,16 @@ struct DisjointSets
 
 	void merge(int x, int y)    // Union by rank
 	{
-		x = find(x), y = find(y);
+		int px = find(x), py = find(y);
 
-		if (rnk[x] > rnk[y])         //Make tree with smaller height a subtree of the other tree 
-			parent[y] = x;
-		else if(rnk[x] < rnk[y])
-			parent[x] = y;
+		if (rnk[px] > rnk[py])         //Make tree with smaller height a subtree of the other tree 
+			parent[py] = px;
+		else if(rnk[px] < rnk[py])
+			parent[px] = py;
 		else
 		{
-			parent[x] = y;
-			rnk[y]++;
+			parent[px] = py;
+			rnk[py]++;
 		}
 	}
 };
