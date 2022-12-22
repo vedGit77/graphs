@@ -23,7 +23,9 @@ void BFS(vector<int> adj[], int s, bool visited[])
 	{ 
 		int u = q.front(); 
 		q.pop();
-
+		
+		//vis[u] = true;  //DON'T DO => FATAL ERROR! => see (for loop) mei we have done vis[v] = true
+		
 		for(int v:adj[u])
 		{
 			 if(visited[v]==false)
