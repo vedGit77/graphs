@@ -102,12 +102,14 @@ means that if 1 stone is @ (0,0) and the other one is @ (100,0), then also 1 of 
 // has O(N) Time, O(N) Space
 
 
+// APPROACH_1 =>
+
 class Solution {
 public:
      int removeStones(vector<vector<int>>& stones) {
         for (int i = 0; i < stones.size(); ++i)
-            uni(stones[i][0], ~stones[i][1]);
-         
+            uni(stones[i][0], ~stones[i][1]);   //why negation ???? => to make x and y coordinates in diff dimensions => we know : [ ~a = -(a+1) ]
+                                                //earier 0 <= x, y <= 10^4  => now x ka range is same => -10^4 -1 <= y <= -1
         return stones.size() - islands;
     }
 
@@ -134,5 +136,58 @@ public:
             f[x] = y;
             islands--;
         }
+    }
+};
+
+
+// APPROACH_2 =>
+
+
+class Solution {
+public:
+    void dfs(vector<int> adj[],vector<bool>& visited,int i)
+    {
+        if(visited[i])
+            return;
+        visited[i]= true;
+        
+        for(int u: adj[i])
+        {
+            if(!visited[u])
+                dfs(adj,visited,u);
+        }
+    }
+    
+    int removeStones(vector<vector<int>>& stones) {
+        int n = stones.size();
+        vector<int> adj[n];
+        
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(i!=j)
+                {
+                    if(stones[i][0]==stones[j][0] || stones[i][1]==stones[j][1])
+                    {
+                        adj[i].push_back(j);
+                    }
+                }
+            }
+        }
+        
+        vector<bool>visited(n,false);
+        
+        int count=0;
+        for(int k=0;k<n;k++)
+        {
+            if(!visited[k])
+            {
+                dfs(adj,visited,k);  
+                count++;
+            }
+        }
+        
+        return (n-count);
     }
 };
