@@ -109,7 +109,7 @@ public:
      int removeStones(vector<vector<int>>& stones) {
         for (int i = 0; i < stones.size(); ++i)
             uni(stones[i][0], ~stones[i][1]);   //why negation ???? => to make x and y coordinates in diff dimensions => we know : [ ~a = -(a+1) ]
-                                                //earier 0 <= x, y <= 10^4  => now x ka range is same => -10^4 -1 <= y <= -1
+                                                //earlier 0 <= x, y <= 10^4  => now x ka range is same => -10^4 -1 <= y <= -1
         return stones.size() - islands;
     }
 
