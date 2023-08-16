@@ -40,24 +40,6 @@ void fill_up(){   //same as binary lifting
     }
 }
 
-bool check(int k){
-    int a = 0;
-	
-    for(int j = LOG; j >= 0; j--) {
-	if(k & (1 << j)) 
-		a = up[a][j]; // parent of a
-    }
-    
-    int b = 1;
-	
-    for(int j = LOG; j >= 0; j--) {
-	if(k & (1 << j)) 
-		b = up[b][j]; // parent of a
-    }
-
-    return a == b;
-}
-
 int get_lca(int a, int b) { // O(log(N))
     if(depth[a] < depth[b]) 
 	swap(a, b);
