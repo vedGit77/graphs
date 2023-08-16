@@ -93,14 +93,14 @@ int main() {
 			int c;
 			cin >> c;
 			children[v].push_back(c);  //directed graph banaya hai
-			parent[c] = v;
+			parent[c] = v;  //make parent array-> 1st parent of each node
 		}
 	}
 	
-	parent[0] = -1;
+	parent[0] = -1;  //IMP-> parent[0] = -1 -> same as binary lifting
 	
-	dfs(0); //given 0 is the root
-	fill_up();  //fill up table
+	dfs(0); //given 0 is the root -> find depth of all nodes
+	fill_up();  //fill 'up' table -> 'up' table used for binary lifting
 	
 	int q;
 	cin >> q;
