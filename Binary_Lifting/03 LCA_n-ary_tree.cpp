@@ -1,14 +1,25 @@
-#include <bits/stdc++.h>
-using namespace std;
+// N <= 10000
+// Q <= 10000
+// root of the tree will always be node 0
 
-const int MAX_N = 10000;
-const int LOG = 14;
-vector<vector<int>> children(MAX_N);
-vector<int>parent(MAX_N);
-int up[MAX_N][LOG]; // up[v][j] is 2^j-th ancestor of v
-int depth[MAX_N];
 
-void dfs(int a) {  //dfs ka work is to store the depth
+//Approach: we per-calculate depth of each node AND the binary lifting table
+//   	  : we bring both nodes (in current query) at same level -> how? -> since we know depth -> find diff in depth and use binary lifting
+//        : now, using binary lifting -> find LCA
+
+
+
+const int MAX_N = 10000;  //no.of nodes
+const int LOG = 14;      // since 2^14 > MAX_N 
+
+vector<vector<int>> children(MAX_N);  //adjacency list -> useful in dfs for finding depth
+vector<int>parent(MAX_N);   //stores 1st parent of each node -> useful to pre-compute binary lifing table
+
+int up[MAX_N][LOG]; // up[v][j] is 2^j-th ancestor of v => binary_lifting table
+int depth[MAX_N];  //depth of each node from root
+
+void dfs(int a)   //dfs ka work is to store the depth
+{  
 	for(int b : children[a]) {
 		depth[b] = depth[a] + 1;
 		dfs(b);
