@@ -20,24 +20,24 @@ int depth[MAX_N];  //depth of each node from root
 
 void dfs(int a)   //dfs ka work is to store the depth
 {  
-	for(int b : children[a]) {
-		depth[b] = depth[a] + 1;
-		dfs(b);
-	}
+    for(int b : children[a]) {
+	depth[b] = depth[a] + 1;
+	dfs(b);
+    }
 }
 
-void fill_up(){
-	for(int i=0;i<MAX_N;i++)
-		up[i][0] = parent[i];
+void fill_up(){   //same as binary lifting
+    for(int i=0;i<MAX_N;i++)  
+	up[i][0] = parent[i];
 	
-	for(int j=1; j<LOG; j++){
-		for(int i=0; i<MAX_N; i++){
-			if(up[i][j-1] == -1)
-				up[i][j] = -1;
-			else
-				up[i][j] = up[ up[i][j-1] ][j-1];
-		}
+    for(int j=1; j<LOG; j++){
+	for(int i=0; i<MAX_N; i++){
+	    if(up[i][j-1] == -1)
+		up[i][j] = -1;
+	    else
+		up[i][j] = up[ up[i][j-1] ][j-1];
 	}
+    }
 }
 
 bool check(int k){
@@ -59,28 +59,29 @@ bool check(int k){
 }
 
 int get_lca(int a, int b) { // O(log(N))
-	if(depth[a] < depth[b]) {
-		swap(a, b);
-	}
+    if(depth[a] < depth[b]) 
+	swap(a, b);
+	
 	// 1) Get same depth.
-	int k = depth[a] - depth[b];
-	for(int j = LOG - 1; j >= 0; j--) {
-		if(k & (1 << j)) {
-			a = up[a][j]; // parent of a
-		}
+    int k = depth[a] - depth[b];
+    for(int j = LOG - 1; j >= 0; j--) {
+	if(k & (1 << j)) {
+	    a = up[a][j]; // parent of a
 	}
+    }
 	// 2) if b was ancestor of a then now a==b
-	if(a == b) {
-		return a;
-	}
+    if(a == b) {
+	return a;
+    }
 	// 3) move both a and b with powers of two
-	for(int j = LOG - 1; j >= 0; j--) {
-		if(up[a][j] != up[b][j]) { 
-			a = up[a][j];
-			b = up[b][j];
-		}
+    for(int j = LOG - 1; j >= 0; j--) {
+	if(up[a][j] != up[b][j]) { 
+            a = up[a][j];
+	    b = up[b][j];
 	}
-	return up[a][0];
+    }
+    
+    return up[a][0];
 }
 
 int main() {
