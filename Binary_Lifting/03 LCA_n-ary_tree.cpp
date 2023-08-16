@@ -62,7 +62,8 @@ int get_lca(int a, int b) { // O(log(N))
 	    b = up[b][j];
 	}
     }
-    
+
+	//IMP-> return parent of 'a' -> since LCA is immidiate parent of updated 'a'
     return up[a][0];
 }
 
