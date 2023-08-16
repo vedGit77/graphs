@@ -60,7 +60,7 @@ public:
             if ((k >> i) & 1)  //since we check only where the binary representation has a set bit
             {  
                 node = v[node][i];  //VVIMP => update node
-                if (node == -1)  //obvio
+                if (node == -1)  //obvio => since less than k ancestors present
                     return -1;
             }
         }
