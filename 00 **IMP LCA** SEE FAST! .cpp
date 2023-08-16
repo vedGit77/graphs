@@ -1,3 +1,8 @@
+#NOTE: This code is ONLY for binary trees
+# for n-ary trees => see binary lifting
+
+
+
 // Binary tree -> 2 nodes given ->find their LCA
 
 //method 2 is better 
