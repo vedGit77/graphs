@@ -7,7 +7,7 @@
 // technique is based on the fact that every integer can be represented in binary form. 
 // Through pre-processing, a sparse table table[v][i] can be calculated 
 // which stores the 2^i parent of the vertex v where 0 <= i <= logN(base 2)
-// This pre-processing takes O(NlogN) time. 
+// This pre-processing takes O(N*logN) time. 
 
 // To find the Kth parent of the vertex V, 
 // let K = b0b1b2…bn be an n bit number in the binary representation, 
