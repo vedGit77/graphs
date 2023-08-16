@@ -1,16 +1,16 @@
-// N <= 10000
-// Q <= 10000
+// N <= 10000 (no of nodes)
+// Q <= 10000 (no of queries)
 // root of the tree will always be node 0
 
 
-//Approach: we per-calculate depth of each node AND the binary lifting table
+//Approach: we per-calculate depth of each node AND binary lifting table
 //   	  : we bring both nodes (in current query) at same level -> how? -> since we know depth -> find diff in depth and use binary lifting
 //        : now, using binary lifting -> find LCA
 
 
 
 const int MAX_N = 10000;  //no.of nodes
-const int LOG = 14;      // since 2^14 > MAX_N 
+const int LOG = 14;      // since (2^14 > MAX_N) OR log(10000)(base 2)
 
 vector<vector<int>> children(MAX_N);  //adjacency list -> useful in dfs for finding depth
 vector<int>parent(MAX_N);   //stores 1st parent of each node -> useful to pre-compute binary lifing table
@@ -42,17 +42,18 @@ void fill_up(){
 
 bool check(int k){
     int a = 0;
+	
     for(int j = LOG; j >= 0; j--) {
-		if(k & (1 << j)) {
-			a = up[a][j]; // parent of a
-		}
-	}
-	int b = 1;
+	if(k & (1 << j)) 
+		a = up[a][j]; // parent of a
+    }
+    
+    int b = 1;
+	
     for(int j = LOG; j >= 0; j--) {
-		if(k & (1 << j)) {
-			b = up[b][j]; // parent of a
-		}
-	}
+	if(k & (1 << j)) 
+		b = up[b][j]; // parent of a
+    }
 
     return a == b;
 }
