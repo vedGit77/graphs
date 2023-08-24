@@ -32,7 +32,7 @@ void topologicalSort(vector<int> adj[], int V)
     { 
         int u = q.front(); 
         q.pop(); 
-        cout<<u<<" "; 
+        cout<<u<<" ";   //VVIMP => this 'u' will be the order of topo sort => neeche for loop mei cout NAHI karna
   
         for (int x: adj[u]) 
         {
