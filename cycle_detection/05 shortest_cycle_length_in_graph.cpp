@@ -6,7 +6,7 @@
 // find shortest cycle length
 
 //approach->
-// apply BFS from every node -> find cycle length starting and ending at that node
+// apply BFS from every node -> find smallest cycle length starting and ending at that node
 // do this for every node and find minimum cycle length
 
 //time : O(V * (V+E))
