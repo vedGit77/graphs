@@ -48,15 +48,14 @@ int countCycles(bool graph[][V], int n)
 	bool marked[V];
 	memset(marked, 0, sizeof(marked));
 
-	// Searching for cycle by using v-n+1 vertices
 	int count = 0;
-	for (int i = 0; i < V - (n - 1); i++) {
+	for (int i = 0; i < V; i++) {
 		DFS(graph, marked, n - 1, i, i, count);
 		// ith vertex is marked as visited and will not be visited again.
 		marked[i] = true;
 	}
 
-	return count / 2;  //
+	return count / 2;  //since every vertex -> finds 2 duplicate cycles that it forms. example 0th vertex => 0->1->2 and 0->2->1 (for a cycle of length 3)
 }
 
 int main()
@@ -66,7 +65,8 @@ int main()
 				{ 0, 1, 0, 1, 0 },
 				{ 1, 0, 1, 0, 1 },
 				{ 0, 1, 0, 1, 0 } };
-	int n = 4;
+	
+	int n = 4;  //length of cycle
 	cout << "Total cycles of length " << n << " are "<< countCycles(graph, n);
 	return 0;
 }
