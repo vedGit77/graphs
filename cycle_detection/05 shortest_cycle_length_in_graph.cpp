@@ -1,4 +1,4 @@
-// UNdirected graph
+// UN-directed graph
 // 2 <= n <= 1000
 // 1 <= edges.length <= 1000
 // There are no repeated edges
