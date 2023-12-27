@@ -85,7 +85,7 @@ void floydWarshall(int graph[][V])
 	pairs of vertices such that the shortest distances consider only the
 	vertices in set {0, 1, 2, .. k-1} as intermediate vertices.*/
 	
-	for (k = 0; k < V; k++) //start with OUTER LOOP OF K
+	for (k = 0; k < V; k++) // FATAL => DONT put this loop inside => WRONG ANS aayega usse
 	{  
 		for (i = 0; i < V; i++)  // Pick all vertices as source one by one
 		{
