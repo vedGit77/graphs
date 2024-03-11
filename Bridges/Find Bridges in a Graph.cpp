@@ -18,7 +18,9 @@
 // The idea is similar to O(V+E) algorithm for Articulation Points. 
 // We do DFS traversal of the given graph. In DFS tree an edge (u, v) (u is parent of v in DFS tree) is bridge 
 // if there does not exist any other alternative to reach u or an ancestor of u from subtree rooted with v. 
-// low[v] indicates earliest visited vertex reachable from subtree rooted with v. 
+
+// Discovery time (disc): Dring DFS => time when a node is visited => disc time. 
+// low[v] indicates earliest visited vertex reachable from SUBTREE rooted with v. 
 // The condition for an edge (u, v) to be a bridge is, “low[v] > disc[u]”. 
 
 
