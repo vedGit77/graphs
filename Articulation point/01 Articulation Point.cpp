@@ -52,7 +52,8 @@ private:
                 }
                 child++;   //diff 3  => child++ ONLY when UN-visited
             }else{
-                low[node] = min(low[node], tin[it]);   //diff 4 => upar use tin[node] => here use tin[it]
+                low[node] = min(low[node], tin[it]);   //diff 4 => upar use tin[node] => here use tin[it] 
+		    				       // learn as => ishar low[node] update krna hai => so use tin[it[ here => so, iska opposite => use tin[node] upar wali condn mei
             }
         }
         if (child > 1 && parent == -1) {   //diff 5 => IMP => (child > 1) AND NOT (child > 0)
