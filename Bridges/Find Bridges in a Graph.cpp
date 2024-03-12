@@ -42,7 +42,7 @@ private:
 	        if (low[it] > tin[node])  //condn for bridge
                     bridges.push_back({it, node});
             }else{
-                low[node] = min(low[node], low[it]);   //only update low (if already visited)
+                low[node] = min(low[node], low[it]);   // update low (if already visited)
             }
         }
     }
