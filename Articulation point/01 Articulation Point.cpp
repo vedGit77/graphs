@@ -25,6 +25,7 @@
 // 			       => here we exclude parent AND visited nodes
 
 //below => I will mark how algo is diff from bridges algo
+// total 5 differences!
 
 
 
@@ -54,7 +55,7 @@ private:
                 low[node] = min(low[node], tin[it]);   //diff 4 => upar use tin[node] => here use tin[it]
             }
         }
-        if (child > 1 && parent == -1) {   //diff 5
+        if (child > 1 && parent == -1) {   //diff 5 => IMP => (child > 1) AND NOT (child > 0)
             mark[node] = 1;
         }
     }
